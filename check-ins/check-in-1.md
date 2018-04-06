@@ -74,4 +74,13 @@ If live updates are implemented, setting a timer for fetch calls.
 
 #### Instructor Notes
 
+Love the idea! Excited to see the finished product!
+
 #### Deliverables for next checkin:
+* Have Redux and Router connected
+* Be making fetch requests, clean data, and putting stuff in the store
+* Start testing!!!
+* Add linter
+* Construct Store Architecture - flat and try not to duplicate data
+* Start building out UI
+* GitHub Issues up to date!
