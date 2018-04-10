@@ -2,7 +2,7 @@ import React from 'react';
 
 const Month = () => {
   return (
-    <div>MONTH</div>
+    <div>Please select a month in the box above.</div>
   );
 };
 

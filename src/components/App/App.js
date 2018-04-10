@@ -10,13 +10,15 @@ import Week from '../Week/Week';
 import Month from '../Month/Month';
 import fetchSeason from '../../helpers/apiCalls';
 
+
 import './App.css';
 
 class App extends Component {
 
   async componentDidMount() {
-    const season = await fetchSeason();
-    this.props.addSeason(season.fullgameschedule.gameentry);
+    const fullSeason = await fetchSeason();
+    const seasonGames = fullSeason.fullgameschedule.gameentry;
+    this.props.addSeason(seasonGames);
   }
 
   render() {
@@ -49,6 +51,8 @@ class App extends Component {
 App.propTypes = {
   addSeason: PropTypes.func
 };
+
+
 
 const mapDispatchToProps = dispatch => ({
   addSeason: (season) => dispatch(actions.addSeason(season))
