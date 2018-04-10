@@ -1,12 +1,11 @@
 import React from 'react';
-import fetchSeason from '../../helpers/apiCalls';
 
-const Home = () => {
-  fetchSeason();
+export const Home = () => {
   
   return (
     <div>HOME</div>
   );
+
 };
 
 export default Home;
