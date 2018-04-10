@@ -2,7 +2,7 @@ import React from 'react';
 
 const Week = () => {
   return (
-    <div>Week</div>
+    <div>Please select a week in the box above.</div>
   );
 };
 
