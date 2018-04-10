@@ -1,4 +1,4 @@
-export const selectSeason = (season) => ({
-  type: 'SELECT_SEASON',
+export const addSeason = (season) => ({
+  type: 'ADD_SEASON',
   season
 });

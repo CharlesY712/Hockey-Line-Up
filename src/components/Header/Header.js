@@ -1,7 +1,7 @@
 import React from 'react';
-import { withRouter, NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import { NavLink } from 'react-router-dom';
+// import { withRouter } from 'react-router-dom';
+// import { connect } from 'react-redux';
 import './Header.css';
 
 const Header = () => {
@@ -28,8 +28,9 @@ const Header = () => {
 };
 
 export default Header;
+
 // export const mapDispatchToProps = dispatch => ({
-//   selectSeason: () => dispatch(actions.selectSeason())
+//   addSeason: () => dispatch(actions.addSeason())
 // });
 
 // export default withRouter(connect(null, mapDispatchToProps)(Header));
