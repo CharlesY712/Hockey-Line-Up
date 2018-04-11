@@ -3,6 +3,7 @@ const dayCleaner = (season, firstDay, lastDay) => {
     if (game.date >= firstDay && game.date <= lastDay) {
       // not going to work with strings
       // parse, evaluate, stringify?
+      // new date('11')
       gamesDuringWeek.push(game);
     }
     return gamesDuringWeek;

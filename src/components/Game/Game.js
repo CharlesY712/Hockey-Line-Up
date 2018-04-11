@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Game = ({homeTeamCity, homeTeamName}) => {
   return (
-    <article>
+    <article className="game-box">
       <h1>{homeTeamCity} {homeTeamName}</h1>
     </article>
   );
@@ -12,6 +12,6 @@ const Game = ({homeTeamCity, homeTeamName}) => {
 Game.propTypes = {
   homeTeamCity: PropTypes.string,
   homeTeamName: PropTypes.string
-}
+};
 
 export default Game;

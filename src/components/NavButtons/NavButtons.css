@@ -1,0 +1,28 @@
+.nav-buttons {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2D3843;
+  color: #A3A8AE;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button {
+  box-sizing: border-box;
+  height: 25vw;
+  margin: auto auto;
+  padding-top: 4%; 
+  text-decoration: none;
+  font-size: 4.5vw;
+  color: #A3A8AE;
+  font-family: 'Allerta Stencil', sans-serif;
+  border: .1rem outset #A3A8AE;
+}
+
+img {
+  width: 80%;
+  height: 40%;
+}

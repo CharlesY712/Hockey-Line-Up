@@ -1,0 +1,28 @@
+
+
+header {
+  text-align: center;
+  background-color: #2D3843;
+}
+
+a {
+  margin-right: 10px;
+  
+}
+
+.app-title {
+  color: #A3A8AE;
+  font-family: 'Allerta Stencil', sans-serif;
+  margin-top: 0px;
+}
+
+/*
+#1A1E21
+#2D3843
+#4E5357
+#677584
+#A3A8AE
+
+rgb(31,27,27) nhl logo
+rgb(228,229,229) nhl logo
+rgb(210,210,210) nhl logo */

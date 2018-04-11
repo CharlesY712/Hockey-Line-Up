@@ -1,13 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-// import { withRouter } from 'react-router-dom';
-// import { connect } from 'react-redux';
+import { withRouter, NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 import './Header.css';
 
-const Header = () => {
+const Header = ({selectSeason}) => {
+
   return (
-    <header className="App-header">
-      <select> 
+    <header className="header">
+      <h1 className="app-title">HOCKEY LINE-UP</h1>
+      SEASON<select onChange={event => selectSeason(event.target.value)}>
         <option value="2016-2017-regular">2016-2017</option>
         <option value="2015-2016-regular">2015-2016</option>
         <option value="2014-2015-regular">2014-2015</option>
@@ -19,21 +21,12 @@ const Header = () => {
         <option value="2008-2009-regular">2008-2009</option>
         <option value="2007-2008-regular">2007-2008</option>
       </select>
-      <h1 className="App-title">Hockey-Line-Up</h1>
-      <NavLink to="/day">DAY</NavLink>
-      <NavLink to="/week">WEEK</NavLink>
-      <NavLink to="/month">MONTH</NavLink>
     </header>
   );
 };
 
-export default Header;
+export const mapDispatchToProps = dispatch => ({
+  selectSeason: (season) => dispatch(actions.selectSeason(season))
+});
 
-// export const mapDispatchToProps = dispatch => ({
-//   addSeason: () => dispatch(actions.addSeason())
-// });
-
-// export default withRouter(connect(null, mapDispatchToProps)(Header));
-
-
-
+export default withRouter(connect(null, mapDispatchToProps)(Header));

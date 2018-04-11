@@ -12,6 +12,7 @@ import fetchSeason from '../../helpers/apiCalls';
 
 
 import './App.css';
+import NavButtons from '../NavButtons/NavButtons';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <NavButtons />
         <Switch>
           <Route
             exact path="/"
