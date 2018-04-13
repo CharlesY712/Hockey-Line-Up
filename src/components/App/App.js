@@ -54,8 +54,6 @@ App.propTypes = {
   addSeason: PropTypes.func
 };
 
-
-
 const mapDispatchToProps = dispatch => ({
   addSeason: (season) => dispatch(actions.addSeason(season))
 });

@@ -1,4 +1,4 @@
-export const selectSeasonReducer = (state = "2016-2017-regular", action) => {
+export const selectSeasonReducer = (state = "2017-2018-regular", action) => {
   switch (action.type) {
   case 'SELECT_SEASON':
     return action.season;
