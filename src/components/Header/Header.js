@@ -6,15 +6,12 @@ import * as actions from '../../actions';
 import './Header.css';
 import fetchSeason from '../../helpers/apiCalls';
 
-// ({selectSeason, location}) => {
-
 class Header extends Component { 
   constructor(props) {
     super(props);
   }
 
   async componentDidMount() {
-    console.log(this.props);
     const fullSeason = await fetchSeason();
     const seasonGames = fullSeason.fullgameschedule.gameentry;
     this.props.addSeason(seasonGames);
