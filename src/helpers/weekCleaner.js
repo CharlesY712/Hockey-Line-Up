@@ -1,4 +1,4 @@
-const dayCleaner = (season, firstDay, lastDay) => {
+const weekCleaner = (season, firstDay, lastDay) => {
   const games = season.reduce((gamesDuringWeek, game) => {
     if (game.date >= firstDay && game.date <= lastDay) {
       // not going to work with strings
@@ -11,4 +11,4 @@ const dayCleaner = (season, firstDay, lastDay) => {
   return games;
 };
 
-export default dayCleaner;
+export default weekCleaner;

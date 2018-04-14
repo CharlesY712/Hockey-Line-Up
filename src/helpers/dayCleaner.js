@@ -1,7 +1,7 @@
 const dayCleaner = (season, day) => {
   const games = season.reduce((gamesOnDay, game) => {
     if (game.date === day) {
-      gamesOnDay.push(game);
+      gamesOnDay = [game, ...game];
     }
     return gamesOnDay;
   }, []);

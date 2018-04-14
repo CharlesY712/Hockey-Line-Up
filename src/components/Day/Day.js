@@ -23,8 +23,8 @@ class Day extends Component {
     let day = "2016-10-12";
     const gamesOnDay = dayCleaner(this.props.season, day);
     console.log(gamesOnDay);
-    const gameChildred = this.displayGames(gamesOnDay);
-    this.setState({games: gameChildred});
+    const gameChildren = this.displayGames(gamesOnDay);
+    this.setState({games: gameChildren});
   }
 
   displayGames(games) {

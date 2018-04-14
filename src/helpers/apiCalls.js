@@ -16,4 +16,6 @@ const fetchSeason = async () => {
   return json;
 };
 
+
+
 export default fetchSeason;
