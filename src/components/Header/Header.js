@@ -6,12 +6,10 @@ import * as actions from '../../actions';
 import './Header.css';
 import fetchSeason from '../../helpers/apiCalls';
 
-class Header extends Component { 
-  constructor(props) {
-    super(props);
-  }
+class Header extends Component {
 
   async componentDidMount() {
+    console.log(this.props)
     const fullSeason = await fetchSeason();
     const seasonGames = fullSeason.fullgameschedule.gameentry;
     this.props.addSeason(seasonGames);
@@ -55,19 +53,25 @@ class Header extends Component {
           {this.determinePath()}
           <div>Season: 
             <select 
-              className="seasonSelect"
-              onChange={event => this.props.selectSeason(event.target.value)}>
-              <option value="2017-2018-regular">2017-2018</option>
-              <option value="2016-2017-regular">2016-2017</option>
-              <option value="2015-2016-regular">2015-2016</option>
-              <option value="2014-2015-regular">2014-2015</option>
-              <option value="2013-2014-regular">2013-2014</option>
-              <option value="2012-2013-regular">2012-2013</option>
-              <option value="2011-2012-regular">2011-2012</option>
-              <option value="2010-2011-regular">2010-2011</option>
-              <option value="2009-2010-regular">2009-2010</option>
-              <option value="2008-2009-regular">2008-2009</option>
-              <option value="2007-2008-regular">2007-2008</option>
+              className="season-date"
+              onChange={event => this.props.selectSeasonDate(event.target.value)}>
+              <option value="2017-2018">2017-2018</option>
+              <option value="2016-2017">2016-2017</option>
+              <option value="2015-2016">2015-2016</option>
+              <option value="2014-2015">2014-2015</option>
+              <option value="2013-2014">2013-2014</option>
+              <option value="2012-2013">2012-2013</option>
+              <option value="2011-2012">2011-2012</option>
+              <option value="2010-2011">2010-2011</option>
+              <option value="2009-2010">2009-2010</option>
+              <option value="2008-2009">2008-2009</option>
+              <option value="2007-2008">2007-2008</option>
+            </select>
+            <select
+              className="season-type"
+              onChange={event => this.props.selectSeasonType(event.target.value)}>
+              <option value="-playoff">Playoff</option>
+              <option value="-regular">Regular</option>
             </select>
           </div>
         </div>
@@ -77,13 +81,16 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  selectSeason: PropTypes.func,
+  addSeason: PropTypes.func,
+  selectSeasonDate: PropTypes.func,
+  selectSeasonType: PropTypes.func,
   location: PropTypes.object
 };
 
 export const mapDispatchToProps = dispatch => ({
   addSeason: (season) => dispatch(actions.addSeason(season)),
-  selectSeason: (season) => dispatch(actions.selectSeason(season))
+  selectSeasonDate: (season) => dispatch(actions.seasonDate(season)),
+  selectSeasonType: (type) => dispatch(actions.seasonType(type))
 });
 
 export default withRouter(connect(null, mapDispatchToProps)(Header));

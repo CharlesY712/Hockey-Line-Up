@@ -3,8 +3,12 @@ export const addSeason = (season) => ({
   season
 });
 
-export const selectSeason = (season) => ({
+export const seasonDate = (date) => ({
   type: 'SELECT_SEASON',
-  season
+  date
 });
 
+export const seasonType = (style) => ({
+  type: 'SELECT_TYPE',
+  style
+});
