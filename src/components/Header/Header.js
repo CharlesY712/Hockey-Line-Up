@@ -12,6 +12,13 @@ class Header extends Component {
     this.getSeason();
     this.getScoreboard();
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.getSeason();
+      this.getScoreboard();
+    }
+  }
   
   async getSeason(){
     const fullSeason = await fetchSeason();
@@ -23,6 +30,7 @@ class Header extends Component {
     const year = this.props.seasonYear;
     const type = this.props.seasonType;
     const date = this.props.date;
+    console.log('getScoreboard date = ' + date)
     const scoreboard = await fetchScoreboard(year, type, date);
     const gamescores = scoreboard.scoreboard.gameScore;
     this.props.addScoreboard(gamescores);
