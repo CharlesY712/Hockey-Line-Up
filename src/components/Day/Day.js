@@ -6,12 +6,25 @@ import dayCleaner from '../../helpers/dayCleaner';
 import Game from '../Game/Game';
 
 class Day extends Component {
+  constructor() {
+    super();
+    this.state = {
+      games: [],
+      day: ""
+    };
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.season !== this.props.season) {
+      this.captureDayGames();
+    }
+  }
 
-  componentDidUpdate() {
+  captureDayGames = () => {
     let day = "2016-10-12";
     const gamesOnDay = dayCleaner(this.props.season, day);
     console.log(gamesOnDay);
-    this.displayGames(gamesOnDay);
+    const gameChildren = this.displayGames(gamesOnDay);
+    this.setState({games: gameChildren});
   }
 
   displayGames(games) {
@@ -31,6 +44,7 @@ class Day extends Component {
     return (
       <section>
         <div>Please select a day in the box above.</div>
+        {this.state.games}
       </section>
     );
   }

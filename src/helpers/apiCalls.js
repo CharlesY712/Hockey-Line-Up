@@ -1,11 +1,12 @@
 import { username, password } from '../apiKey';
 
-const seasonName = '2016-2017-regular';
-const base = 'https://api.mysportsfeeds.com/v1.2/pull/nhl';
-const ext = `/${seasonName}/full_game_schedule.json`;
-const url = base + ext;
 
-const fetchSeason = async () => {
+const fetchSeason = async (seasonDate, seasonType) => {
+  seasonDate = '2016-2017';
+  seasonType = '-regular';
+  const base = 'https://api.mysportsfeeds.com/v1.2/pull/nhl';
+  const ext = `/${seasonDate}${seasonType}/full_game_schedule.json`;
+  const url = base + ext;
   const response = await fetch(url, {
     method: 'GET',
     headers: {
@@ -15,5 +16,7 @@ const fetchSeason = async () => {
   const json = await response.json();
   return json;
 };
+
+
 
 export default fetchSeason;
