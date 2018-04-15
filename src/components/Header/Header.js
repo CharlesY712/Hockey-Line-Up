@@ -9,28 +9,33 @@ import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 class Header extends Component {
 
   componentDidMount() {
-    this.getSeason();
-    this.getScoreboard();
+    if (this.props.date === new Date().toJSON().slice(0, 10)) {
+      this.getSchedule();
+    } else {
+      this.getScoreboard();
+    }
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.getSeason();
-      this.getScoreboard();
+      if (this.props.date === new Date().toJSON().slice(0, 10)) {
+        this.getSchedule();
+      } else {
+        this.getScoreboard();
+      }
     }
   }
   
-  async getSeason(){
-    const fullSeason = await fetchSeason();
-    const seasonGames = fullSeason.fullgameschedule.gameentry;
-    this.props.addSeason(seasonGames);
+  async getSchedule(){
+    const date = this.props.date;
+    const games = await fetchSeason(date);
+    const gameSchedule = games.dailygameschedule.gameentry;
+    this.props.addSchedule(gameSchedule);
   }
 
   async getScoreboard(){    
-    const year = this.props.seasonYear;
-    const type = this.props.seasonType;
     const date = this.props.date;
-    const scoreboard = await fetchScoreboard(year, type, date);
+    const scoreboard = await fetchScoreboard(date);
     const gamescores = scoreboard.scoreboard.gameScore;
     this.props.addScoreboard(gamescores);
   }
@@ -42,6 +47,7 @@ class Header extends Component {
         name="day" 
         className="dateSelector" 
         id="date"
+        min="2017-10-04"
         onChange={event => this.props.setDate(event.target.value)}
       />);
     } else if (this.props.location.pathname === '/week') {
@@ -50,6 +56,7 @@ class Header extends Component {
         name="week" 
         className="dateSelector" 
         id="week"
+        min="2017-10-04"
         onChange={event => this.props.setDate(event.target.value)}
       />);
     } else if (this.props.location.pathname === '/month') {
@@ -58,6 +65,7 @@ class Header extends Component {
         name="month"  
         className="dateSelector" 
         id="month"
+        min="2017-10"
         onChange={event => this.props.setDate(event.target.value)}
       />);
     } else {
@@ -71,29 +79,6 @@ class Header extends Component {
         <Link to="/" className="app-title">HOCKEY LINE-UP</Link><br/>
         <div className="select-boxes">
           {this.determineSelectBox()}
-          <div>Season: 
-            <select 
-              className="season-date"
-              onChange={event => this.props.setSeasonYear(event.target.value)}>
-              <option value="2017-2018">2017-2018</option>
-              <option value="2016-2017">2016-2017</option>
-              <option value="2015-2016">2015-2016</option>
-              <option value="2014-2015">2014-2015</option>
-              <option value="2013-2014">2013-2014</option>
-              <option value="2012-2013">2012-2013</option>
-              <option value="2011-2012">2011-2012</option>
-              <option value="2010-2011">2010-2011</option>
-              <option value="2009-2010">2009-2010</option>
-              <option value="2008-2009">2008-2009</option>
-              <option value="2007-2008">2007-2008</option>
-            </select>
-            <select
-              className="season-type"
-              onChange={event => this.props.setSeasonType(event.target.value)}>
-              <option value="-playoff">Playoff</option>
-              <option value="-regular">Regular</option>
-            </select>
-          </div>
         </div>
       </header>
     );
@@ -101,29 +86,21 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  addSeason: PropTypes.func,
+  addSchedule: PropTypes.func,
   addScoreboard: PropTypes.func,
   setDate: PropTypes.func,
-  setSeasonYear: PropTypes.func,
-  setSeasonType: PropTypes.func,
-  seasonYear: PropTypes.string,
-  seasonType: PropTypes.string,
   date: PropTypes.string,
   location: PropTypes.object
 };
 
 export const mapStateToProps = state => ({
-  date: state.setDate,
-  seasonType: state.seasonType,
-  seasonYear: state.seasonYear
+  date: state.setDate
 });
 
 export const mapDispatchToProps = dispatch => ({
-  addSeason: (season) => dispatch(actions.addSeason(season)),
+  addSchedule: (season) => dispatch(actions.addSchedule(season)),
   addScoreboard: (season) => dispatch(actions.addScoreboard(season)),
   setDate: (date) => dispatch(actions.setDate(date)),
-  setSeasonYear: (year) => dispatch(actions.setSeasonYear(year)),
-  setSeasonType: (type) => dispatch(actions.setSeasonType(type))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
