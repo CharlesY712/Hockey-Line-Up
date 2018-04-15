@@ -3,12 +3,23 @@ export const addSeason = (season) => ({
   season
 });
 
-export const seasonDate = (date) => ({
-  type: 'SELECT_SEASON',
+export const addScoreboard = (scoreboard) => ({
+  type: 'ADD_SCOREBOARD',
+  scoreboard
+});
+
+export const setSeasonYear = (year) => ({
+  type: 'SET_YEAR',
+  year
+});
+
+export const setSeasonType = (style) => ({
+  type: 'SET_TYPE',
+  style
+});
+
+export const setDate = (date) => ({
+  type: 'SET_DATE',
   date
 });
 
-export const seasonType = (style) => ({
-  type: 'SELECT_TYPE',
-  style
-});

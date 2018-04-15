@@ -4,25 +4,38 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import './Header.css';
-import fetchSeason from '../../helpers/apiCalls';
+import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 
 class Header extends Component {
 
-  async componentDidMount() {
-    console.log(this.props)
+  componentDidMount() {
+    this.getSeason();
+    this.getScoreboard();
+  }
+  
+  async getSeason(){
     const fullSeason = await fetchSeason();
     const seasonGames = fullSeason.fullgameschedule.gameentry;
     this.props.addSeason(seasonGames);
   }
-  
-  determinePath() {
+
+  async getScoreboard(){    
+    const year = this.props.seasonYear;
+    const type = this.props.seasonType;
+    const date = this.props.date;
+    const scoreboard = await fetchScoreboard(year, type, date);
+    const gamescores = scoreboard.scoreboard.gameScore;
+    this.props.addScoreboard(gamescores);
+  }
+
+  determineSelectBox() {
     if (this.props.location.pathname === '/day') {
       return (<input 
         type="date" 
         name="day" 
         className="dateSelector" 
         id="date"
-        onChange={event => console.log('day value = ' + event.target.value)}
+        onChange={event => this.props.setDate(event.target.value)}
       />);
     } else if (this.props.location.pathname === '/week') {
       return (<input 
@@ -30,7 +43,7 @@ class Header extends Component {
         name="week" 
         className="dateSelector" 
         id="week"
-        onChange={event => console.log('week value = ' + event.target.value)}
+        onChange={event => this.props.setDate(event.target.value)}
       />);
     } else if (this.props.location.pathname === '/month') {
       return (<input 
@@ -38,7 +51,7 @@ class Header extends Component {
         name="month"  
         className="dateSelector" 
         id="month"
-        onChange={event => console.log('month value = ' + event.target.value)}
+        onChange={event => this.props.setDate(event.target.value)}
       />);
     } else {
       return null;
@@ -50,11 +63,11 @@ class Header extends Component {
       <header className="header">
         <Link to="/" className="app-title">HOCKEY LINE-UP</Link><br/>
         <div className="select-boxes">
-          {this.determinePath()}
+          {this.determineSelectBox()}
           <div>Season: 
             <select 
               className="season-date"
-              onChange={event => this.props.selectSeasonDate(event.target.value)}>
+              onChange={event => this.props.setSeasonYear(event.target.value)}>
               <option value="2017-2018">2017-2018</option>
               <option value="2016-2017">2016-2017</option>
               <option value="2015-2016">2015-2016</option>
@@ -69,7 +82,7 @@ class Header extends Component {
             </select>
             <select
               className="season-type"
-              onChange={event => this.props.selectSeasonType(event.target.value)}>
+              onChange={event => this.props.setSeasonType(event.target.value)}>
               <option value="-playoff">Playoff</option>
               <option value="-regular">Regular</option>
             </select>
@@ -82,15 +95,24 @@ class Header extends Component {
 
 Header.propTypes = {
   addSeason: PropTypes.func,
-  selectSeasonDate: PropTypes.func,
-  selectSeasonType: PropTypes.func,
+  setDate: PropTypes.func,
+  setSeasonYear: PropTypes.func,
+  setSeasonType: PropTypes.func,
   location: PropTypes.object
 };
 
-export const mapDispatchToProps = dispatch => ({
-  addSeason: (season) => dispatch(actions.addSeason(season)),
-  selectSeasonDate: (season) => dispatch(actions.seasonDate(season)),
-  selectSeasonType: (type) => dispatch(actions.seasonType(type))
+export const mapStateToProps = state => ({
+  date: state.setDate,
+  seasonType: state.seasonType,
+  seasonYear: state.seasonYear
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(Header));
+export const mapDispatchToProps = dispatch => ({
+  addSeason: (season) => dispatch(actions.addSeason(season)),
+  addScoreboard: (season) => dispatch(actions.addScoreboard(season)),
+  setDate: (date) => dispatch(actions.setDate(date)),
+  setSeasonYear: (year) => dispatch(actions.setSeasonYear(year)),
+  setSeasonType: (type) => dispatch(actions.setSeasonType(type))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));

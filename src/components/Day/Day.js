@@ -9,32 +9,35 @@ class Day extends Component {
   constructor() {
     super();
     this.state = {
-      games: [],
-      day: ""
+      games: []
     };
   }
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.season !== this.props.season) {
+
+  componentDidMount(){
+    this.captureDayGames();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
       this.captureDayGames();
     }
   }
 
   captureDayGames = () => {
-    let day = "2016-10-12";
-    const gamesOnDay = dayCleaner(this.props.season, day);
-    console.log(gamesOnDay);
+    const gamesOnDay = dayCleaner(this.props.scoreboard, this.props.date);
     const gameChildren = this.displayGames(gamesOnDay);
     this.setState({games: gameChildren});
   }
 
   displayGames(games) {
-    const mappedGames = games.map(game => {
+    const mappedGames = games.map(scoreboard => {
       return <Game
-        key={game.id}
-        homeTeamCity={game.homeTeam.City}
-        homeTeamName={game.homeTeam.Name}
-        awayTeamCity={game.awayTeam.City}
-        awayTeamName={game.awayTeam.Name}
+        key={scoreboard.game.ID}
+        homeTeamCity={scoreboard.game.homeTeam.City}
+        homeTeamName={scoreboard.game.homeTeam.Name}
+        awayTeamCity={scoreboard.game.awayTeam.City}
+        awayTeamName={scoreboard.game.awayTeam.Name}
+        time={scoreboard.game.time}
       />;
     });
     return mappedGames;
@@ -51,11 +54,13 @@ class Day extends Component {
 }
 
 Day.propTypes = {
-  season: PropTypes.array
+  scoreboard: PropTypes.array,
+  date: PropTypes.string
 };
 
-const mapStateToProps = state => ({
-  season: state.season
+export const mapStateToProps = state => ({
+  scoreboard: state.scoreboard,
+  date: state.setDate
 });
 
 export default withRouter(connect(mapStateToProps)(Day));

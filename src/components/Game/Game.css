@@ -1,5 +1,6 @@
 .game-box {
-  width: 95px;
-  height: 20px;
+  width: 95%;
+  height: 50px;
   background-color: #A3A8AE;
+  margin: auto;
 }
