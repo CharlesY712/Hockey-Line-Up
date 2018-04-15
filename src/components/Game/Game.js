@@ -14,7 +14,8 @@ Game.propTypes = {
   homeTeamCity: PropTypes.string,
   homeTeamName: PropTypes.string,
   awayTeamCity: PropTypes.string,
-  awayTeamName: PropTypes.string
+  awayTeamName: PropTypes.string,
+  time: PropTypes.string
 };
 
 export default Game;

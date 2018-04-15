@@ -4,16 +4,30 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import './Header.css';
-import { fetchSeason } from '../../helpers/apiCalls';
+import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 
 class Header extends Component {
 
-  async componentDidMount() {
+  componentDidMount() {
+    this.getSeason();
+    this.getScoreboard();
+  }
+  
+  async getSeason(){
     const fullSeason = await fetchSeason();
     const seasonGames = fullSeason.fullgameschedule.gameentry;
     this.props.addSeason(seasonGames);
   }
-  
+
+  async getScoreboard(){    
+    const year = this.props.seasonYear;
+    const type = this.props.seasonType;
+    const date = this.props.date;
+    const scoreboard = await fetchScoreboard(year, type, date);
+    const gamescores = scoreboard.scoreboard.gameScore;
+    this.props.addScoreboard(gamescores);
+  }
+
   determineSelectBox() {
     if (this.props.location.pathname === '/day') {
       return (<input 
@@ -87,11 +101,18 @@ Header.propTypes = {
   location: PropTypes.object
 };
 
+export const mapStateToProps = state => ({
+  date: state.setDate,
+  seasonType: state.seasonType,
+  seasonYear: state.seasonYear
+});
+
 export const mapDispatchToProps = dispatch => ({
   addSeason: (season) => dispatch(actions.addSeason(season)),
+  addScoreboard: (season) => dispatch(actions.addScoreboard(season)),
   setDate: (date) => dispatch(actions.setDate(date)),
   setSeasonYear: (year) => dispatch(actions.setSeasonYear(year)),
   setSeasonType: (type) => dispatch(actions.setSeasonType(type))
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(Header));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
