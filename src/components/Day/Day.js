@@ -9,19 +9,22 @@ class Day extends Component {
   constructor() {
     super();
     this.state = {
-      games: [],
-      day: ""
+      games: []
     };
   }
+
+  componentDidMount(){
+    this.captureDayGames();
+  }
+
   componentDidUpdate(prevProps) {
-    if (prevProps.season !== this.props.season) {
+    if (prevProps !== this.props) {
       this.captureDayGames();
     }
   }
 
   captureDayGames = () => {
-    let day = "2018-04-14";
-    const gamesOnDay = dayCleaner(this.props.season, day);
+    const gamesOnDay = dayCleaner(this.props.season, this.props.date);
     console.log(gamesOnDay);
     const gameChildren = this.displayGames(gamesOnDay);
     this.setState({games: gameChildren});
@@ -35,6 +38,7 @@ class Day extends Component {
         homeTeamName={game.homeTeam.Name}
         awayTeamCity={game.awayTeam.City}
         awayTeamName={game.awayTeam.Name}
+        time={game.time}
       />;
     });
     return mappedGames;
@@ -51,11 +55,13 @@ class Day extends Component {
 }
 
 Day.propTypes = {
-  season: PropTypes.array
+  season: PropTypes.array,
+  date: PropTypes.string
 };
 
 const mapStateToProps = state => ({
-  season: state.season
+  season: state.season,
+  date: state.setDate
 });
 
 export default withRouter(connect(mapStateToProps)(Day));

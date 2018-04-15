@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import './Header.css';
-import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
+import { fetchSeason } from '../../helpers/apiCalls';
 
 class Header extends Component {
 

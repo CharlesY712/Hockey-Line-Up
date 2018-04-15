@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Game.css';
 
-const Game = ({homeTeamCity, homeTeamName, awayTeamCity, awayTeamName}) => {
+const Game = ({homeTeamCity, homeTeamName, awayTeamCity, awayTeamName, time}) => {
   return (
     <article className="game-box">
-      <h1>{homeTeamCity} {homeTeamName}</h1>
-      <span>vs</span>
-      <h1>{awayTeamCity} {awayTeamName}</h1>
+      <h1>{awayTeamCity} {awayTeamName} vs {homeTeamCity} {homeTeamName} @ {time}</h1>
     </article>
   );
 };
