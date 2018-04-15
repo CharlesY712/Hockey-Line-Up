@@ -12,6 +12,13 @@ class Header extends Component {
     this.getSeason();
     this.getScoreboard();
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      this.getSeason();
+      this.getScoreboard();
+    }
+  }
   
   async getSeason(){
     const fullSeason = await fetchSeason();
@@ -95,9 +102,13 @@ class Header extends Component {
 
 Header.propTypes = {
   addSeason: PropTypes.func,
+  addScoreboard: PropTypes.func,
   setDate: PropTypes.func,
   setSeasonYear: PropTypes.func,
   setSeasonType: PropTypes.func,
+  seasonYear: PropTypes.string,
+  seasonType: PropTypes.string,
+  date: PropTypes.string,
   location: PropTypes.object
 };
 
