@@ -13,14 +13,14 @@ class Day extends Component {
       day: ""
     };
   }
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     if (prevProps.season !== this.props.season) {
       this.captureDayGames();
     }
   }
 
   captureDayGames = () => {
-    let day = "2016-10-12";
+    let day = "2018-04-14";
     const gamesOnDay = dayCleaner(this.props.season, day);
     console.log(gamesOnDay);
     const gameChildren = this.displayGames(gamesOnDay);

@@ -1,12 +1,14 @@
 import { combineReducers } from 'redux';
-import { seasonReducer } from './seasonReducer';
-import { seasonDateReducer } from './seasonDateReducer';
-import { seasonTypeReducer } from './seasonTypeReducer';
+import { addSeasonReducer } from './addSeasonReducer';
+import { setDateReducer } from './setDateReducer';
+import { setSeasonTypeReducer } from './setSeasonTypeReducer';
+import { setSeasonYearReducer } from './setSeasonYearReducer';
 
 const rootReducer = combineReducers({
-  season: seasonReducer,
-  seasonDate: seasonDateReducer,
-  seasonType: seasonTypeReducer
+  season: addSeasonReducer,
+  setDate: setDateReducer,
+  seasonType: setSeasonTypeReducer,
+  seasonYear: setSeasonYearReducer
 });
 
 export default rootReducer;
