@@ -30,7 +30,6 @@ class Header extends Component {
     const year = this.props.seasonYear;
     const type = this.props.seasonType;
     const date = this.props.date;
-    console.log('getScoreboard date = ' + date)
     const scoreboard = await fetchScoreboard(year, type, date);
     const gamescores = scoreboard.scoreboard.gameScore;
     this.props.addScoreboard(gamescores);
@@ -103,9 +102,13 @@ class Header extends Component {
 
 Header.propTypes = {
   addSeason: PropTypes.func,
+  addScoreboard: PropTypes.func,
   setDate: PropTypes.func,
   setSeasonYear: PropTypes.func,
   setSeasonType: PropTypes.func,
+  seasonYear: PropTypes.string,
+  seasonType: PropTypes.string,
+  date: PropTypes.string,
   location: PropTypes.object
 };
 
