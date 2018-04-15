@@ -24,23 +24,43 @@ class Day extends Component {
   }
 
   captureDayGames = () => {
-    const gamesOnDay = dayCleaner(this.props.scoreboard, this.props.date);
-    const gameChildren = this.displayGames(gamesOnDay);
-    this.setState({games: gameChildren});
+    if (this.props.date === new Date().toJSON().slice(0, 10)){
+      const gamesOnDay = dayCleaner(this.props.schedule, this.props.date);
+      const gameChildren = this.displayGames(gamesOnDay);
+      this.setState({games: gameChildren});
+    } else {
+      const gamesOnDay = dayCleaner(this.props.scoreboard, this.props.date);
+      const gameChildren = this.displayGames(gamesOnDay);
+      this.setState({games: gameChildren});
+    }
   }
 
   displayGames(games) {
-    const mappedGames = games.map(scoreboard => {
-      return <Game
-        key={scoreboard.game.ID}
-        homeTeamCity={scoreboard.game.homeTeam.City}
-        homeTeamName={scoreboard.game.homeTeam.Name}
-        awayTeamCity={scoreboard.game.awayTeam.City}
-        awayTeamName={scoreboard.game.awayTeam.Name}
-        time={scoreboard.game.time}
-      />;
-    });
-    return mappedGames;
+    if (this.props.date === new Date().toJSON().slice(0, 10)) {
+      const mappedGames = games.map(schedule => {
+        return <Game
+          key={schedule.id}
+          homeTeamCity={schedule.homeTeam.City}
+          homeTeamName={schedule.homeTeam.Name}
+          awayTeamCity={schedule.awayTeam.City}
+          awayTeamName={schedule.awayTeam.Name}
+          time={schedule.time}
+        />;
+      });
+      return mappedGames;
+    } else {
+      const mappedGames = games.map(scoreboard => {
+        return <Game
+          key={scoreboard.game.ID}
+          homeTeamCity={scoreboard.game.homeTeam.City}
+          homeTeamName={scoreboard.game.homeTeam.Name}
+          awayTeamCity={scoreboard.game.awayTeam.City}
+          awayTeamName={scoreboard.game.awayTeam.Name}
+          time={scoreboard.game.time}
+        />;
+      });
+      return mappedGames;
+    }
   }
   
   render() {
@@ -54,11 +74,13 @@ class Day extends Component {
 }
 
 Day.propTypes = {
+  schedule: PropTypes.array,
   scoreboard: PropTypes.array,
   date: PropTypes.string
 };
 
 export const mapStateToProps = state => ({
+  schedule: state.schedule,
   scoreboard: state.scoreboard,
   date: state.setDate
 });

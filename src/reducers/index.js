@@ -1,16 +1,12 @@
 import { combineReducers } from 'redux';
-import { addSeasonReducer } from './addSeasonReducer';
+import { addScheduleReducer } from './addScheduleReducer';
 import { addScoreboardReducer } from './addScoreboardReducer';
 import { setDateReducer } from './setDateReducer';
-import { setSeasonTypeReducer } from './setSeasonTypeReducer';
-import { setSeasonYearReducer } from './setSeasonYearReducer';
 
 const rootReducer = combineReducers({
-  season: addSeasonReducer,
+  schedule: addScheduleReducer,
   scoreboard: addScoreboardReducer,
-  setDate: setDateReducer,
-  seasonType: setSeasonTypeReducer,
-  seasonYear: setSeasonYearReducer
+  setDate: setDateReducer
 });
 
 export default rootReducer;
