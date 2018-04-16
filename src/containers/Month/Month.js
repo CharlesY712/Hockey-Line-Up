@@ -46,7 +46,6 @@ class Month extends Component {
         monthOfGames = [...monthOfGames, ...gameSchedule];
       }
     }
-    console.log(monthOfGames);
     this.props.addSchedule(monthOfGames);
     const gameComponents = this.displayGames(monthOfGames);
     this.setState({games: gameComponents, isLoading: false});
