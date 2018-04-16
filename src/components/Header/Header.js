@@ -21,7 +21,7 @@ class Header extends Component {
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
       const selectedDate = parseInt(this.props.date.split('-').join(''));
-      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));      
       if (selectedDate >= todaysDate) {
         this.getSchedule();
       } else {
