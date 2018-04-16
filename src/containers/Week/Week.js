@@ -5,18 +5,22 @@ import PropTypes from 'prop-types';
 import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
 import { fetchSeason } from '../../helpers/apiCalls';
+import loadingGif from '../../images/icons/blue_loading.gif';
+import './Week.css';
 
 class Week extends Component {
   constructor() {
     super();
     this.state = {
-      games: []
+      games: [],
+      isLoading: false
     };
   }
 
   componentDidMount() {
     if (this.props.date.includes('W')) {
       this.getWeekDays();
+      this.setState({isLoading: true});
     }
   }
 
@@ -24,6 +28,7 @@ class Week extends Component {
     if (prevProps.date !== this.props.date) {
       if (this.props.date.includes('W')) {
         this.getWeekDays();
+        this.setState({isLoading: true});
       }
     }
   }
@@ -57,7 +62,7 @@ class Week extends Component {
     }
     this.props.addSchedule(weekOfGames);
     const gameComponents = this.displayGames(weekOfGames);
-    this.setState({games: gameComponents});
+    this.setState({games: gameComponents, isLoading: false});
   }
 
   displayGames() {
@@ -78,11 +83,22 @@ class Week extends Component {
   render() {
     if (this.props.date.includes('W')) {
       return (
-        <section>
-          <div className="directions">Please select a week in the box above.</div>
-          <h1 className="date">{this.props.date}</h1>
-          {this.state.games}
-        </section>
+        <div>
+          {
+            this.state.isLoading &&
+          <section>
+            <img className="loading-gif" src={loadingGif} alt="loading"/>
+          </section>
+          }
+          {
+            !this.state.isLoading &&
+          <section>
+            <div className="directions">Please select a week in the box above.</div>
+            <h1 className="date">{this.props.date}</h1>
+            {this.state.games}
+          </section>
+          }
+        </div>
       );
     } else {
       return (

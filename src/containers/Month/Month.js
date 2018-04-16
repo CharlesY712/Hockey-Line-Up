@@ -5,11 +5,14 @@ import PropTypes from 'prop-types';
 import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
 import { fetchSeason } from '../../helpers/apiCalls';
+import loadingGif from '../../images/icons/blue_loading.gif';
+import './Month.css';
 
 class Month extends Component {
   constructor() {
     super();
     this.state = {
+      isLoading: false,
       games: []
     };
   }
@@ -17,12 +20,14 @@ class Month extends Component {
   componentDidMount() {
     if (this.props.date.length === 7) {
       this.getMonthDays();
+      this.setState({isLoading: true});
     }
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps.date !== this.props.date) {
       if (this.props.date.length === 7) {
+        this.setState({isLoading: true});
         this.getMonthDays();
       }
     }
@@ -41,10 +46,10 @@ class Month extends Component {
         monthOfGames = [...monthOfGames, ...gameSchedule];
       }
     }
-    console.log(monthOfGames)
+    console.log(monthOfGames);
     this.props.addSchedule(monthOfGames);
     const gameComponents = this.displayGames(monthOfGames);
-    this.setState({games: gameComponents});
+    this.setState({games: gameComponents, isLoading: false});
   }
 
   displayGames() {
@@ -65,11 +70,22 @@ class Month extends Component {
   render() {
     if (this.props.date.length === 7) {
       return (
+        <div>
+          {
+            this.state.isLoading &&   
         <section>
-          <div className="directions">Please select a Month in the box above.</div>
-          <h1 className="date">{this.props.date}</h1>
-          {this.state.games}
+          <img className="loading-gif" src={loadingGif} alt="loading"/>
         </section>
+          }
+          {
+            !this.state.isLoading &&   
+          <section>
+            <div className="directions">Please select a Month in the box above.</div>
+            <h1 className="date">{this.props.date}</h1>
+            {this.state.games}
+          </section>
+          }
+        </div>
       );
     } else {
       return (

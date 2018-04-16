@@ -2,3 +2,8 @@
 .directions {
   color: #677584;
 }
+
+.loading-gif {
+  width: 100vw;
+  height: 80vh;
+}
