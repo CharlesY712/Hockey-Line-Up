@@ -22,7 +22,7 @@ export const fetchSeason = async (date) => {
     const json = await response.json();
     return json;
   } catch (error) {
-    throw Error;
+    throw error;
   }
 };
 
@@ -47,6 +47,6 @@ export const fetchScoreboard = async (date) => {
     const json = await response.json();
     return json;
   } catch (error) {
-    throw Error;
+    throw error;
   }
 };
