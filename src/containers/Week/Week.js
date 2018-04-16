@@ -5,21 +5,22 @@ import PropTypes from 'prop-types';
 import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
 import { fetchSeason } from '../../helpers/apiCalls';
+import loadingGif from '../../images/icons/blue_loading.gif';
+import './Week.css';
 
 class Week extends Component {
   constructor() {
     super();
     this.state = {
-      games: []
+      games: [],
+      isLoading: false
     };
   }
 
   componentDidMount() {
     if (this.props.date.includes('W')) {
       this.getWeekDays();
-    //   this.getSchedule();
-    //   const gameChildren = this.displayGames();
-    //   this.setState({games: gameChildren});
+      this.setState({isLoading: true});
     }
   }
 
@@ -27,9 +28,7 @@ class Week extends Component {
     if (prevProps.date !== this.props.date) {
       if (this.props.date.includes('W')) {
         this.getWeekDays();
-        //     this.getSchedule();
-        //     const gameChildren = this.displayGames();
-        //     this.setState({games: gameChildren});
+        this.setState({isLoading: true});
       }
     }
   }
@@ -46,24 +45,24 @@ class Week extends Component {
     return ISOweekStart.toISOString().slice(0, 10);
   }
 
-  getWeekDays() {
+  async getWeekDays() {
     const year = this.props.date.slice(0, 4);
     const week = this.props.date.slice(6, 8);
     const date = this.getDateOfISOWeek(year, week);
-    for (let index = 0; index < 1; index++) {
+    let weekOfGames = [];
+    for (let index = 0; index < 7; index++) {
       let myDate = new Date(date);
       myDate.setDate(myDate.getDate() + index);
       let nextDay = myDate.toISOString().slice(0, 10);
-      this.getSchedule(nextDay);
+      const games = await fetchSeason(nextDay);
+      const gameSchedule = games.dailygameschedule.gameentry;
+      if (gameSchedule !== undefined) {
+        weekOfGames = [...weekOfGames, ...gameSchedule];
+      }
     }
-  }
-
-  async getSchedule(date){
-    const games = await fetchSeason(date);
-    const gameSchedule = games.dailygameschedule.gameentry;
-    this.props.addSchedule(gameSchedule);
-    // const gameComponents = this.displayGames(gameSchedule);
-    // this.setState({games: gameComponents});
+    this.props.addSchedule(weekOfGames);
+    const gameComponents = this.displayGames(weekOfGames);
+    this.setState({games: gameComponents, isLoading: false});
   }
 
   displayGames() {
@@ -74,6 +73,7 @@ class Week extends Component {
         homeTeamName={schedule.homeTeam.Name}
         awayTeamCity={schedule.awayTeam.City}
         awayTeamName={schedule.awayTeam.Name}
+        date={schedule.date.slice(5)}
         time={schedule.time}
       />;
     });
@@ -83,11 +83,22 @@ class Week extends Component {
   render() {
     if (this.props.date.includes('W')) {
       return (
-        <section>
-          <div className="directions">Please select a week in the box above.</div>
-          <h1 className="date">{this.props.date}</h1>
-          {this.state.games}
-        </section>
+        <div>
+          {
+            this.state.isLoading &&
+          <section>
+            <img className="loading-gif" src={loadingGif} alt="loading"/>
+          </section>
+          }
+          {
+            !this.state.isLoading &&
+          <section>
+            <div className="directions">Please select a week in the box above.</div>
+            <h1 className="date">{this.props.date}</h1>
+            {this.state.games}
+          </section>
+          }
+        </div>
       );
     } else {
       return (

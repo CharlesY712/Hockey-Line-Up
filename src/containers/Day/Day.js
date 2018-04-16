@@ -6,12 +6,14 @@ import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
 import './Day.css';
 import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
+import loadingGif from '../../images/icons/blue_loading.gif';
 
 class Day extends Component {
   constructor() {
     super();
     this.state = {
-      games: []
+      games: [],
+      isLoading: false
     };
   }
 
@@ -23,10 +25,12 @@ class Day extends Component {
         this.getSchedule();
         const gameChildren = this.displayGames();
         this.setState({games: gameChildren});
+        this.setState({isLoading: true});
       } else {
         this.getScoreboard();
         const gameChildren = this.displayGames();
         this.setState({games: gameChildren});
+        this.setState({isLoading: true});
       }
     }
   }
@@ -35,7 +39,7 @@ class Day extends Component {
     if (this.props.date.length === 10) {
       if (prevProps.date !== this.props.date) {
         const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
-        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);      
+        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
         if (selectedDate >= todaysDate) {
           this.getSchedule();
         } else {
@@ -51,16 +55,24 @@ class Day extends Component {
     const gameSchedule = games.dailygameschedule.gameentry;
     this.props.addSchedule(gameSchedule);
     const gameComponents = this.displayGames(gameSchedule);
-    this.setState({games: gameComponents});
+    this.setState({games: gameComponents, isLoading: false});
   }
 
   async getScoreboard(){    
     const date = this.props.date;
     const scoreboard = await fetchScoreboard(date);
     const gameScores = scoreboard.scoreboard.gameScore;
-    this.props.addScoreboard(gameScores);
-    const gameComponents = this.displayGames(gameScores);
-    this.setState({games: gameComponents});
+    if (gameScores !== undefined) {
+      this.props.addScoreboard(gameScores);
+      const gameComponents = this.displayGames();
+      this.setState({games: gameComponents, isLoading: false});
+    } else {
+      const noGames = <Game
+        key={'noGames'}
+        noGames={'No Games Scheduled'}
+      />;
+      this.setState({games: noGames, isLoading: false});
+    }
   }
 
   displayGames() {
@@ -96,11 +108,22 @@ class Day extends Component {
   render() {
     if (this.props.date.length === 10) {
       return (
-        <section>
-          <div className="directions">Please select a day in the box above.</div>
-          <h2 className="date">{this.props.date}</h2>
-          {this.state.games}
-        </section>
+        <div>
+          {
+            this.state.isLoading &&
+          <section>
+            <img className="loading-gif" src={loadingGif} alt="loading"/>
+          </section>
+          }
+          {
+            !this.state.isLoading &&
+          <section>
+            <div className="directions">Please select a day in the box above.</div>
+            <h2 className="date">{this.props.date}</h2>
+            {this.state.games}
+          </section>
+          }
+        </div>
       );
     } else {
       return (

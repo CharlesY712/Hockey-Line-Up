@@ -4,7 +4,7 @@ exports[`Month matches the snapshot 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Month />,
+  Symbol(enzyme.__unrendered__): <withRouter(Connect(Month)) />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -15,27 +15,25 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "class",
     "props": Object {
-      "children": "Please select a month in the box above.",
-      "className": "directions",
+      "render": [Function],
     },
     "ref": null,
-    "rendered": "Please select a month in the box above.",
-    "type": "div",
+    "rendered": null,
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "class",
       "props": Object {
-        "children": "Please select a month in the box above.",
-        "className": "directions",
+        "render": [Function],
       },
       "ref": null,
-      "rendered": "Please select a month in the box above.",
-      "type": "div",
+      "rendered": null,
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {
