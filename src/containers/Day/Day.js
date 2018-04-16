@@ -35,7 +35,7 @@ class Day extends Component {
     if (this.props.date.length === 10) {
       if (prevProps.date !== this.props.date) {
         const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
-        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);      
+        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
         if (selectedDate >= todaysDate) {
           this.getSchedule();
         } else {
@@ -58,9 +58,17 @@ class Day extends Component {
     const date = this.props.date;
     const scoreboard = await fetchScoreboard(date);
     const gameScores = scoreboard.scoreboard.gameScore;
-    this.props.addScoreboard(gameScores);
-    const gameComponents = this.displayGames(gameScores);
-    this.setState({games: gameComponents});
+    if (gameScores !== undefined) {
+      this.props.addScoreboard(gameScores);
+      const gameComponents = this.displayGames();
+      this.setState({games: gameComponents});
+    } else {
+      const noGames = <Game
+        key={'noGames'}
+        noGames={'No Games Scheduled'}
+      />;
+      this.setState({games: noGames});
+    }
   }
 
   displayGames() {

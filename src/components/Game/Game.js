@@ -2,12 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './Game.css';
 
-const Game = ({homeTeamCity, homeTeamName, awayTeamCity, awayTeamName, time}) => {
-  return (
-    <article className="game-box">
-      <h1>{awayTeamCity} {awayTeamName} vs {homeTeamCity} {homeTeamName} @ {time}</h1>
-    </article>
-  );
+const Game = ({homeTeamCity, homeTeamName, awayTeamCity, awayTeamName, time, date, noGames}) => {
+  if (homeTeamCity) {
+    return (
+      <article className="game-box">
+        <h1>{awayTeamCity} {awayTeamName} vs {homeTeamCity} {homeTeamName} on {date} @ {time}</h1>
+      </article>
+    );
+  } else {
+    return (
+      <article className="game-box">
+        <h1>{noGames}</h1>
+      </article>
+    );
+  }
 };
 
 Game.propTypes = {
@@ -15,6 +23,8 @@ Game.propTypes = {
   homeTeamName: PropTypes.string,
   awayTeamCity: PropTypes.string,
   awayTeamName: PropTypes.string,
+  noGames: PropTypes.string,
+  date: PropTypes.string,
   time: PropTypes.string
 };
 

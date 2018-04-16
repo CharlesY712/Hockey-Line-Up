@@ -17,9 +17,6 @@ class Week extends Component {
   componentDidMount() {
     if (this.props.date.includes('W')) {
       this.getWeekDays();
-    //   this.getSchedule();
-    //   const gameChildren = this.displayGames();
-    //   this.setState({games: gameChildren});
     }
   }
 
@@ -27,9 +24,6 @@ class Week extends Component {
     if (prevProps.date !== this.props.date) {
       if (this.props.date.includes('W')) {
         this.getWeekDays();
-        //     this.getSchedule();
-        //     const gameChildren = this.displayGames();
-        //     this.setState({games: gameChildren});
       }
     }
   }
@@ -46,24 +40,24 @@ class Week extends Component {
     return ISOweekStart.toISOString().slice(0, 10);
   }
 
-  getWeekDays() {
+  async getWeekDays() {
     const year = this.props.date.slice(0, 4);
     const week = this.props.date.slice(6, 8);
     const date = this.getDateOfISOWeek(year, week);
-    for (let index = 0; index < 1; index++) {
+    let weekOfGames = [];
+    for (let index = 0; index < 7; index++) {
       let myDate = new Date(date);
       myDate.setDate(myDate.getDate() + index);
       let nextDay = myDate.toISOString().slice(0, 10);
-      this.getSchedule(nextDay);
+      const games = await fetchSeason(nextDay);
+      const gameSchedule = games.dailygameschedule.gameentry;
+      if (gameSchedule !== undefined) {
+        weekOfGames = [...weekOfGames, ...gameSchedule];
+      }
     }
-  }
-
-  async getSchedule(date){
-    const games = await fetchSeason(date);
-    const gameSchedule = games.dailygameschedule.gameentry;
-    this.props.addSchedule(gameSchedule);
-    // const gameComponents = this.displayGames(gameSchedule);
-    // this.setState({games: gameComponents});
+    this.props.addSchedule(weekOfGames);
+    const gameComponents = this.displayGames(weekOfGames);
+    this.setState({games: gameComponents});
   }
 
   displayGames() {
@@ -74,6 +68,7 @@ class Week extends Component {
         homeTeamName={schedule.homeTeam.Name}
         awayTeamCity={schedule.awayTeam.City}
         awayTeamName={schedule.awayTeam.Name}
+        date={schedule.date.slice(5)}
         time={schedule.time}
       />;
     });

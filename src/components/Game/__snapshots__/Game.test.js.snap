@@ -17,12 +17,7 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1>
-         
-         vs 
-         
-         @ 
-</h1>,
+      "children": <h1 />,
       "className": "game-box",
     },
     "ref": null,
@@ -31,30 +26,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          undefined,
-          " ",
-          undefined,
-          " vs ",
-          undefined,
-          " ",
-          undefined,
-          " @ ",
-          undefined,
-        ],
+        "children": undefined,
       },
       "ref": null,
-      "rendered": Array [
-        undefined,
-        " ",
-        undefined,
-        " vs ",
-        undefined,
-        " ",
-        undefined,
-        " @ ",
-        undefined,
-      ],
+      "rendered": null,
       "type": "h1",
     },
     "type": "article",
@@ -65,12 +40,7 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1>
-           
-           vs 
-           
-           @ 
-</h1>,
+        "children": <h1 />,
         "className": "game-box",
       },
       "ref": null,
@@ -79,30 +49,10 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": Array [
-            undefined,
-            " ",
-            undefined,
-            " vs ",
-            undefined,
-            " ",
-            undefined,
-            " @ ",
-            undefined,
-          ],
+          "children": undefined,
         },
         "ref": null,
-        "rendered": Array [
-          undefined,
-          " ",
-          undefined,
-          " vs ",
-          undefined,
-          " ",
-          undefined,
-          " @ ",
-          undefined,
-        ],
+        "rendered": null,
         "type": "h1",
       },
       "type": "article",
