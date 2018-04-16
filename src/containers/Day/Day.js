@@ -86,6 +86,7 @@ class Day extends Component {
           homeTeamName={schedule.homeTeam.Name}
           awayTeamCity={schedule.awayTeam.City}
           awayTeamName={schedule.awayTeam.Name}
+          date={schedule.date.slice(5)}
           time={schedule.time}
         />;
       });
@@ -98,6 +99,7 @@ class Day extends Component {
           homeTeamName={scoreboard.game.homeTeam.Name}
           awayTeamCity={scoreboard.game.awayTeam.City}
           awayTeamName={scoreboard.game.awayTeam.Name}
+          date={scoreboard.game.date.slice(5)}
           time={scoreboard.game.time}
         />;
       });

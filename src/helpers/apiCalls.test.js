@@ -1,5 +1,5 @@
 import { fetchSeason, fetchScoreboard } from './apiCalls';
-import mockSeason from '../mocks/mockSeason';
+import mockSchedule from '../mocks/mockSchedule';
 import mockScoreboard from '../mocks/mockScoreboard';
 
 describe('apiCalls', () => {
@@ -8,7 +8,7 @@ describe('apiCalls', () => {
     
     beforeEach(() => {
       date = '2018-04-13';
-      response = mockSeason;
+      response = mockSchedule;
       base = 'https://api.mysportsfeeds.com/v1.2/pull/nhl';
       ext = '/2018/daily_game_schedule.json?fordate=20180413';
       url = base + ext;
@@ -27,7 +27,7 @@ describe('apiCalls', () => {
     });
 
     it('should return an array of games', async () => {
-      const expected = mockSeason;
+      const expected = mockSchedule;
       const games = await fetchSeason(date);
       expect(games).toEqual(expected);
     });
