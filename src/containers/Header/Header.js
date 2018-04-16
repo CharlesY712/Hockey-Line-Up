@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import * as actions from '../../actions';
 import './Header.css';
 
-class Header extends Component {
+export class Header extends Component {
 
   determineSelectBox() {
     if (this.props.location.pathname === '/day') {
@@ -15,7 +15,7 @@ class Header extends Component {
         className="dateSelector" 
         id="date"
         min="2017-10-04"
-        onChange={event => this.props.setDate(event.target.value)}
+        onChange={this.handleChange}
       />);
     } else if (this.props.location.pathname === '/week') {
       return (<input 
@@ -24,7 +24,7 @@ class Header extends Component {
         className="dateSelector" 
         id="week"
         min="2017-10-04"
-        onChange={event => this.props.setDate(event.target.value)}
+        onChange={this.handleChange}
       />);
     } else if (this.props.location.pathname === '/month') {
       return (<input 
@@ -33,11 +33,15 @@ class Header extends Component {
         className="dateSelector" 
         id="month"
         min="2017-10"
-        onChange={event => this.props.setDate(event.target.value)}
+        onChange={this.handleChange}
       />);
     } else {
       return null;
     }
+  }
+
+  handleChange = (event) => {
+    this.props.setDate(event.target.value);
   }
 
   render() {
