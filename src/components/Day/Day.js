@@ -3,6 +3,8 @@ import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Game from '../Game/Game';
+import * as actions from '../../actions';
+import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 
 class Day extends Component {
   constructor() {
@@ -12,16 +14,52 @@ class Day extends Component {
     };
   }
 
-  componentDidMount(){
-    const gameChildren = this.displayGames();
-    this.setState({games: gameChildren});
+  componentDidMount() {
+    if (this.props.date.length === 10) {
+      const selectedDate = parseInt(this.props.date.split('-').join(''));
+      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+      if (selectedDate >= todaysDate) {
+        this.getSchedule();
+        const gameChildren = this.displayGames();
+        this.setState({games: gameChildren});
+      } else {
+        this.getScoreboard();
+        const gameChildren = this.displayGames();
+        this.setState({games: gameChildren});
+      }
+    }
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      const gameChildren = this.displayGames();
-      this.setState({games: gameChildren});
+    if (this.props.date.length === 10) {
+      if (prevProps.date !== this.props.date) {
+        const selectedDate = parseInt(this.props.date.split('-').join(''));
+        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));      
+        if (selectedDate >= todaysDate) {
+          this.getSchedule();
+        } else {
+          this.getScoreboard();
+        }
+      }
     }
+  }
+
+  async getSchedule(){
+    const date = this.props.date;
+    const games = await fetchSeason(date);
+    const gameSchedule = games.dailygameschedule.gameentry;
+    this.props.addSchedule(gameSchedule);
+    const gameComponents = this.displayGames(gameSchedule);
+    this.setState({games: gameComponents});
+  }
+
+  async getScoreboard(){    
+    const date = this.props.date;
+    const scoreboard = await fetchScoreboard(date);
+    const gameScores = scoreboard.scoreboard.gameScore;
+    this.props.addScoreboard(gameScores);
+    const gameComponents = this.displayGames(gameScores);
+    this.setState({games: gameComponents});
   }
 
   displayGames() {
@@ -66,15 +104,24 @@ class Day extends Component {
 }
 
 Day.propTypes = {
+  addSchedule: PropTypes.func,
+  addScoreboard: PropTypes.func,
+  date: PropTypes.string,
+  setDate: PropTypes.func,
   schedule: PropTypes.array,
-  scoreboard: PropTypes.array,
-  date: PropTypes.string
+  scoreboard: PropTypes.array
 };
 
 export const mapStateToProps = state => ({
+  date: state.setDate,
   schedule: state.schedule,
-  scoreboard: state.scoreboard,
-  date: state.setDate
+  scoreboard: state.scoreboard
 });
 
-export default withRouter(connect(mapStateToProps)(Day));
+export const mapDispatchToProps = dispatch => ({
+  addSchedule: (season) => dispatch(actions.addSchedule(season)),
+  addScoreboard: (season) => dispatch(actions.addScoreboard(season)),
+  setDate: (date) => dispatch(actions.setDate(date))
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Day));

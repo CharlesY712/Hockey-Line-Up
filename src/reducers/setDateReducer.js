@@ -1,4 +1,4 @@
-export const setDateReducer = (state = new Date().toJSON().slice(0, 10), action) => {
+export const setDateReducer = (state = '', action) => {
   switch (action.type) {
   case 'SET_DATE':
     return action.date;
