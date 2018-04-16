@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import Header from '../Header/Header';
+import Header from '../../containers/Header/Header';
 import NavButtons from '../NavButtons/NavButtons';
 import Home from '../Home/Home';
-import Day from '../Day/Day';
-import Week from '../Week/Week';
-import Month from '../Month/Month';
+import Day from '../../containers/Day/Day';
+import Week from '../../containers/Week/Week';
+import Month from '../../containers/Month/Month';
 import './App.css';
 
 class App extends Component {

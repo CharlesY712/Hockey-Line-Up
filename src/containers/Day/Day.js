@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Game from '../Game/Game';
+import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
+import './Day.css';
 import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 
 class Day extends Component {
@@ -93,13 +94,21 @@ class Day extends Component {
   }
   
   render() {
-    return (
-      <section>
-        <div>Please select a day in the box above.</div>
-        <h1>{this.props.date}</h1>
-        {this.state.games}
-      </section>
-    );
+    if (this.props.date.length === 10) {
+      return (
+        <section>
+          <div className="directions">Please select a day in the box above.</div>
+          <h2 className="date">{this.props.date}</h2>
+          {this.state.games}
+        </section>
+      );
+    } else {
+      return (
+        <section>
+          <div className="directions">Please select a day in the box above.</div>
+        </section>
+      );
+    }
   }
 }
 

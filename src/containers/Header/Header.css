@@ -1,8 +1,5 @@
-
-
 header {
   background-color: #2D3843;
-  
 }
 
 .app-title {
@@ -14,14 +11,6 @@ header {
 .select-boxes {
   display: flex;
   justify-content: space-between;
-}
-
-.season-type {
-
-}
-
-.season-date {
-
 }
 
 /*

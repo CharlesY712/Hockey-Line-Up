@@ -1,9 +1,13 @@
 import React from 'react';
+import './Home.css';
+import nhllogo from '../../images/icons/nhl-logo.png';
 
 export const Home = () => {
   
   return (
-    <div>HOME</div>
+    <div className="logo-wrapper">
+      <img className="logo" src={nhllogo} alt="logo"/>
+    </div>
   );
 
 };

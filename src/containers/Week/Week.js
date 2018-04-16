@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Game from '../Game/Game';
+import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
 import { fetchSeason } from '../../helpers/apiCalls';
 
@@ -27,9 +27,9 @@ class Week extends Component {
     if (prevProps.date !== this.props.date) {
       if (this.props.date.includes('W')) {
         this.getWeekDays();
-    //     this.getSchedule();
-    //     const gameChildren = this.displayGames();
-    //     this.setState({games: gameChildren});
+        //     this.getSchedule();
+        //     const gameChildren = this.displayGames();
+        //     this.setState({games: gameChildren});
       }
     }
   }
@@ -81,13 +81,21 @@ class Week extends Component {
   }
   
   render() {
-    return (
-      <section>
-        <div>Please select a day in the box above.</div>
-        <h1>{this.props.date}</h1>
-        {this.state.games}
-      </section>
-    );
+    if (this.props.date.includes('W')) {
+      return (
+        <section>
+          <div className="directions">Please select a week in the box above.</div>
+          <h1 className="date">{this.props.date}</h1>
+          {this.state.games}
+        </section>
+      );
+    } else {
+      return (
+        <section>
+          <div className="directions">Please select a week in the box above.</div>
+        </section>
+      );
+    }
   }
 }
 
