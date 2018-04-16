@@ -1,0 +1,429 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches the snapshot 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <NavButtons />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="home button"
+          to="/"
+>
+          <img
+                    alt="home-icon"
+                    src="home.svg"
+          />
+          Home
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="day button"
+          to="/day"
+>
+          <img
+                    alt="day-icon"
+                    src="day-calendar.svg"
+          />
+          Day
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="week button"
+          to="/week"
+>
+          <img
+                    alt="week-icon"
+                    src="week-calendar.svg"
+          />
+          Week
+</NavLink>,
+        <NavLink
+          activeClassName="active"
+          ariaCurrent="true"
+          className="month button"
+          to="/month"
+>
+          <img
+                    alt="month-icon"
+                    src="month-calendar.svg"
+          />
+          Month
+</NavLink>,
+      ],
+      "className": "nav-buttons",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": Array [
+            <img
+              alt="home-icon"
+              src="home.svg"
+/>,
+            "Home",
+          ],
+          "className": "home button",
+          "to": "/",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "home-icon",
+              "src": "home.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "Home",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": Array [
+            <img
+              alt="day-icon"
+              src="day-calendar.svg"
+/>,
+            "Day",
+          ],
+          "className": "day button",
+          "to": "/day",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "day-icon",
+              "src": "day-calendar.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "Day",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": Array [
+            <img
+              alt="week-icon"
+              src="week-calendar.svg"
+/>,
+            "Week",
+          ],
+          "className": "week button",
+          "to": "/week",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "week-icon",
+              "src": "week-calendar.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "Week",
+        ],
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "activeClassName": "active",
+          "ariaCurrent": "true",
+          "children": Array [
+            <img
+              alt="month-icon"
+              src="month-calendar.svg"
+/>,
+            "Month",
+          ],
+          "className": "month button",
+          "to": "/month",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "month-icon",
+              "src": "month-calendar.svg",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "Month",
+        ],
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="home button"
+            to="/"
+>
+            <img
+                        alt="home-icon"
+                        src="home.svg"
+            />
+            Home
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="day button"
+            to="/day"
+>
+            <img
+                        alt="day-icon"
+                        src="day-calendar.svg"
+            />
+            Day
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="week button"
+            to="/week"
+>
+            <img
+                        alt="week-icon"
+                        src="week-calendar.svg"
+            />
+            Week
+</NavLink>,
+          <NavLink
+            activeClassName="active"
+            ariaCurrent="true"
+            className="month button"
+            to="/month"
+>
+            <img
+                        alt="month-icon"
+                        src="month-calendar.svg"
+            />
+            Month
+</NavLink>,
+        ],
+        "className": "nav-buttons",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <img
+                alt="home-icon"
+                src="home.svg"
+/>,
+              "Home",
+            ],
+            "className": "home button",
+            "to": "/",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "home-icon",
+                "src": "home.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "Home",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <img
+                alt="day-icon"
+                src="day-calendar.svg"
+/>,
+              "Day",
+            ],
+            "className": "day button",
+            "to": "/day",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "day-icon",
+                "src": "day-calendar.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "Day",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <img
+                alt="week-icon"
+                src="week-calendar.svg"
+/>,
+              "Week",
+            ],
+            "className": "week button",
+            "to": "/week",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "week-icon",
+                "src": "week-calendar.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "Week",
+          ],
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "activeClassName": "active",
+            "ariaCurrent": "true",
+            "children": Array [
+              <img
+                alt="month-icon"
+                src="month-calendar.svg"
+/>,
+              "Month",
+            ],
+            "className": "month button",
+            "to": "/month",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "alt": "month-icon",
+                "src": "month-calendar.svg",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "img",
+            },
+            "Month",
+          ],
+          "type": [Function],
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

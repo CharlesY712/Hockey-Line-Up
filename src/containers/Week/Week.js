@@ -61,7 +61,7 @@ class Week extends Component {
   async getSchedule(date){
     const games = await fetchSeason(date);
     const gameSchedule = games.dailygameschedule.gameentry;
-    // this.props.addSchedule(gameSchedule);
+    this.props.addSchedule(gameSchedule);
     // const gameComponents = this.displayGames(gameSchedule);
     // this.setState({games: gameComponents});
   }
