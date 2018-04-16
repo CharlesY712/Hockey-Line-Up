@@ -17,8 +17,8 @@ class Day extends Component {
 
   componentDidMount() {
     if (this.props.date.length === 10) {
-      const selectedDate = parseInt(this.props.date.split('-').join(''));
-      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+      const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
+      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
       if (selectedDate >= todaysDate) {
         this.getSchedule();
         const gameChildren = this.displayGames();
@@ -34,8 +34,8 @@ class Day extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.date.length === 10) {
       if (prevProps.date !== this.props.date) {
-        const selectedDate = parseInt(this.props.date.split('-').join(''));
-        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));      
+        const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
+        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);      
         if (selectedDate >= todaysDate) {
           this.getSchedule();
         } else {
@@ -64,8 +64,8 @@ class Day extends Component {
   }
 
   displayGames() {
-    const selectedDate = parseInt(this.props.date.split('-').join(''));
-    const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+    const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
+    const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
     if (selectedDate >= todaysDate) {
       const mappedGames = this.props.schedule.map(schedule => {
         return <Game
