@@ -9,7 +9,9 @@ import { fetchSeason, fetchScoreboard } from '../../helpers/apiCalls';
 class Header extends Component {
 
   componentDidMount() {
-    if (this.props.date === new Date().toJSON().slice(0, 10)) {
+    const selectedDate = parseInt(this.props.date.split('-').join(''));
+    const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+    if (selectedDate >= todaysDate) {
       this.getSchedule();
     } else {
       this.getScoreboard();
@@ -18,7 +20,9 @@ class Header extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      if (this.props.date === new Date().toJSON().slice(0, 10)) {
+      const selectedDate = parseInt(this.props.date.split('-').join(''));
+      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+      if (selectedDate >= todaysDate) {
         this.getSchedule();
       } else {
         this.getScoreboard();

@@ -14,30 +14,22 @@ class Day extends Component {
   }
 
   componentDidMount(){
-    this.captureDayGames();
+    const gameChildren = this.displayGames();
+    this.setState({games: gameChildren});
   }
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      this.captureDayGames();
-    }
-  }
-
-  captureDayGames = () => {
-    if (this.props.date === new Date().toJSON().slice(0, 10)){
-      const gamesOnDay = dayCleaner(this.props.schedule, this.props.date);
-      const gameChildren = this.displayGames(gamesOnDay);
-      this.setState({games: gameChildren});
-    } else {
-      const gamesOnDay = dayCleaner(this.props.scoreboard, this.props.date);
-      const gameChildren = this.displayGames(gamesOnDay);
+      const gameChildren = this.displayGames();
       this.setState({games: gameChildren});
     }
   }
 
-  displayGames(games) {
-    if (this.props.date === new Date().toJSON().slice(0, 10)) {
-      const mappedGames = games.map(schedule => {
+  displayGames() {
+    const selectedDate = parseInt(this.props.date.split('-').join(''));
+    const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''));
+    if (selectedDate >= todaysDate) {
+      const mappedGames = this.props.schedule.map(schedule => {
         return <Game
           key={schedule.id}
           homeTeamCity={schedule.homeTeam.City}
@@ -49,7 +41,7 @@ class Day extends Component {
       });
       return mappedGames;
     } else {
-      const mappedGames = games.map(scoreboard => {
+      const mappedGames = this.props.scoreboard.map(scoreboard => {
         return <Game
           key={scoreboard.game.ID}
           homeTeamCity={scoreboard.game.homeTeam.City}
@@ -67,6 +59,7 @@ class Day extends Component {
     return (
       <section>
         <div>Please select a day in the box above.</div>
+        <h1>{this.props.date}</h1>
         {this.state.games}
       </section>
     );
