@@ -17,7 +17,13 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <h1 />,
+      "children": <h1>
+         
+         vs 
+         
+         on 
+         @ 
+</h1>,
       "className": "game-box",
     },
     "ref": null,
@@ -26,10 +32,34 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": undefined,
+        "children": Array [
+          undefined,
+          " ",
+          undefined,
+          " vs ",
+          undefined,
+          " ",
+          undefined,
+          " on ",
+          undefined,
+          " @ ",
+          undefined,
+        ],
       },
       "ref": null,
-      "rendered": null,
+      "rendered": Array [
+        undefined,
+        " ",
+        undefined,
+        " vs ",
+        undefined,
+        " ",
+        undefined,
+        " on ",
+        undefined,
+        " @ ",
+        undefined,
+      ],
       "type": "h1",
     },
     "type": "article",
@@ -40,7 +70,13 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <h1 />,
+        "children": <h1>
+           
+           vs 
+           
+           on 
+           @ 
+</h1>,
         "className": "game-box",
       },
       "ref": null,
@@ -49,10 +85,34 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
-          "children": undefined,
+          "children": Array [
+            undefined,
+            " ",
+            undefined,
+            " vs ",
+            undefined,
+            " ",
+            undefined,
+            " on ",
+            undefined,
+            " @ ",
+            undefined,
+          ],
         },
         "ref": null,
-        "rendered": null,
+        "rendered": Array [
+          undefined,
+          " ",
+          undefined,
+          " vs ",
+          undefined,
+          " ",
+          undefined,
+          " on ",
+          undefined,
+          " @ ",
+          undefined,
+        ],
         "type": "h1",
       },
       "type": "article",

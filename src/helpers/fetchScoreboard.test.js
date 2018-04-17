@@ -1,16 +1,16 @@
-import { fetchSeason, fetchScoreboard } from './apiCalls';
-import mockSchedule from '../mocks/mockSchedule';
+import { fetchScoreboard } from '../helpers/fetchScoreboard';
 import mockScoreboard from '../mocks/mockScoreboard';
 
-describe('apiCalls', () => {
-  describe('fetchSeason', () => {
+describe('fetchScoreboard', () => {
+  
+  describe('regular season fetch', () => {
     let response, url, base, ext, options, date;
-    
+
     beforeEach(() => {
-      date = '2018-04-13';
-      response = mockSchedule;
+      date = '2018-04-02';
+      response = mockScoreboard;
       base = 'https://api.mysportsfeeds.com/v1.2/pull/nhl';
-      ext = '/2018/daily_game_schedule.json?fordate=20180413';
+      ext = `/2017-2018/scoreboard.json?fordate=20180402`;
       url = base + ext;
       options = {
         "method": "GET",
@@ -22,16 +22,16 @@ describe('apiCalls', () => {
     });
 
     it('should fetch with correct options', () => {
-      fetchSeason(date);
+      fetchScoreboard(date);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
     });
-
+    
     it('should return an array of games', async () => {
-      const expected = mockSchedule;
-      const games = await fetchSeason(date);
+      const expected = mockScoreboard;
+      const games = await fetchScoreboard(date);
       expect(games).toEqual(expected);
     });
-
+    
     it('should throw an error', () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.reject({
@@ -43,12 +43,14 @@ describe('apiCalls', () => {
         status: 500,
         message: 'Error'
       };
-      const apiCall = fetchSeason(date);
+      const apiCall = fetchScoreboard(date);
       expect(apiCall).rejects.toEqual(expected);
     });
+
   });
 
-  describe('fetchScoreboard', () => {
+  describe('playoff fetch', () => {
+
     let response, url, base, ext, options, date;
     
     beforeEach(() => {
@@ -65,18 +67,18 @@ describe('apiCalls', () => {
         Promise.resolve({ok: true, json: () => Promise.resolve(response)})
       ));
     });
-
+    
     it('should fetch with correct options', () => {
       fetchScoreboard(date);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
     });
-
+    
     it('should return an array of games', async () => {
       const expected = mockScoreboard;
-      const games = await fetchSeason(date);
+      const games = await fetchScoreboard(date);
       expect(games).toEqual(expected);
     });
-
+    
     it('should throw an error', () => {
       window.fetch = jest.fn().mockImplementation(() =>
         Promise.reject({
