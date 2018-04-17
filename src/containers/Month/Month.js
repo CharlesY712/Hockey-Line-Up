@@ -8,7 +8,7 @@ import { fetchSeason } from '../../helpers/fetchSeason';
 import loadingGif from '../../images/icons/blue_loading.gif';
 import './Month.css';
 
-class Month extends Component {
+export class Month extends Component {
   constructor() {
     super();
     this.state = {

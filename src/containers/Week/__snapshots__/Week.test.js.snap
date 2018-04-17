@@ -1,0 +1,577 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Week Week container should not display games on mount if selected date doesnt include W 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Week
+    addSchedule={[Function]}
+    date="2018-04-12"
+    schedule={
+        Array [
+            Object {
+              "dailygameschedule": Object {
+                "gameentry": Array [
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "COL",
+                      "City": "Colorado",
+                      "ID": "22",
+                      "Name": "Avalanche",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "NSH",
+                      "City": "Nashville",
+                      "ID": "18",
+                      "Name": "Predators",
+                    },
+                    "id": "45866",
+                    "location": "Bridgestone Arena",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "3:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "NJD",
+                      "City": "New Jersey",
+                      "ID": "7",
+                      "Name": "Devils",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "TBL",
+                      "City": "Tampa Bay",
+                      "ID": "1",
+                      "Name": "Lightning",
+                    },
+                    "id": "45875",
+                    "location": "Amalie Arena",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "3:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "TOR",
+                      "City": "Toronto",
+                      "ID": "12",
+                      "Name": "Maple Leafs",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "BOS",
+                      "City": "Boston",
+                      "ID": "11",
+                      "Name": "Bruins",
+                    },
+                    "id": "45874",
+                    "location": "TD Garden",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "8:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "SJS",
+                      "City": "San Jose",
+                      "ID": "26",
+                      "Name": "Sharks",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "ANA",
+                      "City": "Anaheim",
+                      "ID": "29",
+                      "Name": "Ducks",
+                    },
+                    "id": "45873",
+                    "location": "Honda Center",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "10:30PM",
+                  },
+                ],
+                "lastUpdatedOn": "2018-04-12 4:24:49 PM",
+              },
+            },
+          ]
+    }
+    setDate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="directions"
+>
+        Please select a week in the box above.
+</div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Please select a week in the box above.",
+        "className": "directions",
+      },
+      "ref": null,
+      "rendered": "Please select a week in the box above.",
+      "type": "div",
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="directions"
+>
+          Please select a week in the box above.
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Please select a week in the box above.",
+          "className": "directions",
+        },
+        "ref": null,
+        "rendered": "Please select a week in the box above.",
+        "type": "div",
+      },
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Week Week container should not display games on update if selected date doesnt inclued W 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Week
+    addSchedule={[Function]}
+    date="2018-04-12"
+    schedule={
+        Array [
+            Object {
+              "dailygameschedule": Object {
+                "gameentry": Array [
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "COL",
+                      "City": "Colorado",
+                      "ID": "22",
+                      "Name": "Avalanche",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "NSH",
+                      "City": "Nashville",
+                      "ID": "18",
+                      "Name": "Predators",
+                    },
+                    "id": "45866",
+                    "location": "Bridgestone Arena",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "3:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "NJD",
+                      "City": "New Jersey",
+                      "ID": "7",
+                      "Name": "Devils",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "TBL",
+                      "City": "Tampa Bay",
+                      "ID": "1",
+                      "Name": "Lightning",
+                    },
+                    "id": "45875",
+                    "location": "Amalie Arena",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "3:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "TOR",
+                      "City": "Toronto",
+                      "ID": "12",
+                      "Name": "Maple Leafs",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "BOS",
+                      "City": "Boston",
+                      "ID": "11",
+                      "Name": "Bruins",
+                    },
+                    "id": "45874",
+                    "location": "TD Garden",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "8:00PM",
+                  },
+                  Object {
+                    "awayTeam": Object {
+                      "Abbreviation": "SJS",
+                      "City": "San Jose",
+                      "ID": "26",
+                      "Name": "Sharks",
+                    },
+                    "date": "2018-04-14",
+                    "delayedOrPostponedReason": null,
+                    "homeTeam": Object {
+                      "Abbreviation": "ANA",
+                      "City": "Anaheim",
+                      "ID": "29",
+                      "Name": "Ducks",
+                    },
+                    "id": "45873",
+                    "location": "Honda Center",
+                    "originalDate": null,
+                    "originalTime": null,
+                    "scheduleStatus": "Normal",
+                    "time": "10:30PM",
+                  },
+                ],
+                "lastUpdatedOn": "2018-04-12 4:24:49 PM",
+              },
+            },
+          ]
+    }
+    setDate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": <div
+        className="directions"
+>
+        Please select a week in the box above.
+</div>,
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": "Please select a week in the box above.",
+        "className": "directions",
+      },
+      "ref": null,
+      "rendered": "Please select a week in the box above.",
+      "type": "div",
+    },
+    "type": "section",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <div
+          className="directions"
+>
+          Please select a week in the box above.
+</div>,
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Please select a week in the box above.",
+          "className": "directions",
+        },
+        "ref": null,
+        "rendered": "Please select a week in the box above.",
+        "type": "div",
+      },
+      "type": "section",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;
+
+exports[`Week Week container should not display schedule on update if there are no games in Week 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Week
+    addSchedule={[Function]}
+    date="2018-W24"
+    schedule={
+        Array [
+            Object {
+              "awayTeam": Object {
+                "Abbreviation": "COL",
+                "City": "Colorado",
+                "ID": "22",
+                "Name": "Avalanche",
+              },
+              "date": "2018-04-14",
+              "delayedOrPostponedReason": null,
+              "homeTeam": Object {
+                "Abbreviation": "NSH",
+                "City": "Nashville",
+                "ID": "18",
+                "Name": "Predators",
+              },
+              "id": "45866",
+              "location": "Bridgestone Arena",
+              "originalDate": null,
+              "originalTime": null,
+              "scheduleStatus": "Normal",
+              "time": "3:00PM",
+            },
+            Object {
+              "awayTeam": Object {
+                "Abbreviation": "NJD",
+                "City": "New Jersey",
+                "ID": "7",
+                "Name": "Devils",
+              },
+              "date": "2018-04-14",
+              "delayedOrPostponedReason": null,
+              "homeTeam": Object {
+                "Abbreviation": "TBL",
+                "City": "Tampa Bay",
+                "ID": "1",
+                "Name": "Lightning",
+              },
+              "id": "45875",
+              "location": "Amalie Arena",
+              "originalDate": null,
+              "originalTime": null,
+              "scheduleStatus": "Normal",
+              "time": "3:00PM",
+            },
+            Object {
+              "awayTeam": Object {
+                "Abbreviation": "TOR",
+                "City": "Toronto",
+                "ID": "12",
+                "Name": "Maple Leafs",
+              },
+              "date": "2018-04-14",
+              "delayedOrPostponedReason": null,
+              "homeTeam": Object {
+                "Abbreviation": "BOS",
+                "City": "Boston",
+                "ID": "11",
+                "Name": "Bruins",
+              },
+              "id": "45874",
+              "location": "TD Garden",
+              "originalDate": null,
+              "originalTime": null,
+              "scheduleStatus": "Normal",
+              "time": "8:00PM",
+            },
+            Object {
+              "awayTeam": Object {
+                "Abbreviation": "SJS",
+                "City": "San Jose",
+                "ID": "26",
+                "Name": "Sharks",
+              },
+              "date": "2018-04-14",
+              "delayedOrPostponedReason": null,
+              "homeTeam": Object {
+                "Abbreviation": "ANA",
+                "City": "Anaheim",
+                "ID": "29",
+                "Name": "Ducks",
+              },
+              "id": "45873",
+              "location": "Honda Center",
+              "originalDate": null,
+              "originalTime": null,
+              "scheduleStatus": "Normal",
+              "time": "10:30PM",
+            },
+          ]
+    }
+    setDate={[Function]}
+/>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <section>
+          <img
+                    alt="loading"
+                    className="loading-gif"
+                    src="blue_loading.gif"
+          />
+</section>,
+        false,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": <img
+            alt="loading"
+            className="loading-gif"
+            src="blue_loading.gif"
+/>,
+        },
+        "ref": null,
+        "rendered": Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "alt": "loading",
+            "className": "loading-gif",
+            "src": "blue_loading.gif",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "img",
+        },
+        "type": "section",
+      },
+      false,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <section>
+            <img
+                        alt="loading"
+                        className="loading-gif"
+                        src="blue_loading.gif"
+            />
+</section>,
+          false,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": <img
+              alt="loading"
+              className="loading-gif"
+              src="blue_loading.gif"
+/>,
+          },
+          "ref": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "alt": "loading",
+              "className": "loading-gif",
+              "src": "blue_loading.gif",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "img",
+          },
+          "type": "section",
+        },
+        false,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

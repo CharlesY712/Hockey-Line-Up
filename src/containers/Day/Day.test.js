@@ -50,7 +50,7 @@ describe('Day', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should display a message if selected date length is not 10', () => {
+    it('should not display games if selected date length is not 10', () => {
       wrapper = shallow(<Day
         date={'2018-04'}
         schedule={[schedule]}
@@ -63,7 +63,7 @@ describe('Day', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should display a message if selected date length is not 10', () => {
+    it('should not display games if selected date length is not 10', () => {
       wrapper = shallow(<Day
         date={'2018-05'}
         schedule={[schedule]}
@@ -141,19 +141,7 @@ describe('Day', () => {
 
       expect(fetchScoreboard).toHaveBeenCalled();
     });
-
-
   });
-
-
-
-
-
-
-
-
-
-
 
   describe('mapStateToProps', () => {
     
