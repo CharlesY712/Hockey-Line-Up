@@ -405,7 +405,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Day Day container should display a message if selected date length is not 10 1`] = `
+exports[`Day Day container should not display games if selected date length is not 10 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -771,7 +771,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Day Day container should display a message if selected date length is not 10 2`] = `
+exports[`Day Day container should not display games if selected date length is not 10 2`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
