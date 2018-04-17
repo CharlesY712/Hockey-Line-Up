@@ -8,7 +8,7 @@ import { fetchSeason } from '../../helpers/fetchSeason';
 import loadingGif from '../../images/icons/blue_loading.gif';
 import './Week.css';
 
-class Week extends Component {
+export class Week extends Component {
   constructor() {
     super();
     this.state = {
@@ -37,11 +37,7 @@ class Week extends Component {
     const simple = new Date(year, 0, 1 + (week - 1) * 7);
     const dow = simple.getDay();
     const ISOweekStart = simple;
-    if (dow <= 4) {
-      ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
-    } else {
-      ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
-    }
+    ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
     return ISOweekStart.toISOString().slice(0, 10);
   }
 
