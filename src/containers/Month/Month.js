@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Game from '../../components/Game/Game';
 import * as actions from '../../actions';
-import { fetchSeason } from '../../helpers/apiCalls';
+import { fetchSeason } from '../../helpers/fetchSeason';
 import loadingGif from '../../images/icons/blue_loading.gif';
 import './Month.css';
 

@@ -1,6 +1,6 @@
 import { addScheduleReducer } from './addScheduleReducer';
 import * as actions from '../actions';
-import mockSeason from '../mocks/mockSeason';
+import mockSchedule from '../mocks/mockSchedule';
 
 describe('addScheduleReducer', () => {
 
@@ -10,7 +10,7 @@ describe('addScheduleReducer', () => {
   });
 
   it('should add schedule to state', () => {
-    const schedule = mockSeason;
+    const schedule = mockSchedule;
     const expected = schedule;
     expect(addScheduleReducer(undefined, actions.addSchedule(schedule)))
       .toEqual(expected);
