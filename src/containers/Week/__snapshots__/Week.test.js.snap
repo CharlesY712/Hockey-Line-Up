@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Week Week container should not display games on mount if selected date doesnt include W 1`] = `
+exports[`Week Week container should not display games on mount if date doesnt include W 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -179,7 +179,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Week Week container should not display games on update if selected date doesnt inclued W 1`] = `
+exports[`Week Week container should not display games on update if date doesnt inclued W 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -358,7 +358,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Week Week container should not display schedule on update if there are no games in Week 1`] = `
+exports[`Week Week container should not display schedule on update if no games in Week 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

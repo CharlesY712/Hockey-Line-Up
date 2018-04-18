@@ -218,7 +218,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Month Month container should not display games on mount if selected date length is not 7 1`] = `
+exports[`Month Month container should not display games on mount if date length is not 7 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -397,7 +397,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`Month Month container should not display games on update if selected date length is not 7 1`] = `
+exports[`Month Month container should not display games on update if date length is not 7 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],

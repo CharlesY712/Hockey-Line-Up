@@ -1,5 +1,6 @@
 .date,
 .directions {
+  text-align: center;
   color: #677584;
 }
 
@@ -7,3 +8,4 @@
   width: 100vw;
   height: 80vh;
 }
+

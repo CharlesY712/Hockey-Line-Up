@@ -1,25 +1,57 @@
 header {
-  background-color: #2D3843;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgb(45, 45, 45);
 }
 
 .app-title {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
   color: #A3A8AE;
   font-family: 'Allerta Stencil', sans-serif;
   font-size: 2rem;
   text-decoration: none;
+  padding-top: .5rem;
 }
+
 .select-boxes {
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-/*
-#1A1E21
-#2D3843
-#4E5357
-#677584
-#A3A8AE
+.date-selector {
+  color: #A3A8AE;
+  background-color: rgb(45, 45, 45);
+  margin-bottom: .5rem;
+  margin-top: -.5rem;
+}
 
-rgb(31,27,27) nhl logo
-rgb(228,229,229) nhl logo
-rgb(210,210,210) nhl logo */
+@media (min-width: 414px) {
+  .app-title {
+    font-size: 3rem;
+  }
+  
+  .date-selector {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    margin-top: -.5rem;
+  }
+}
+
+@media (min-width: 591px) {
+}
+
+@media (min-width: 768px) {
+  .app-title {
+    font-size: 3rem;
+  }
+  
+  .date-selector {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+    margin-top: -.5rem;
+  }
+}

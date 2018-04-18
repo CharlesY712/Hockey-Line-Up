@@ -12,7 +12,7 @@ export class Header extends Component {
       return (<input 
         type="date" 
         name="day" 
-        className="dateSelector" 
+        className="date-selector" 
         id="date"
         min="2017-10-04"
         onChange={this.handleChange}
@@ -21,7 +21,7 @@ export class Header extends Component {
       return (<input 
         type="week" 
         name="week" 
-        className="dateSelector" 
+        className="date-selector" 
         id="week"
         min="2017-10-04"
         onChange={this.handleChange}
@@ -30,7 +30,7 @@ export class Header extends Component {
       return (<input 
         type="month" 
         name="month"  
-        className="dateSelector" 
+        className="date-selector" 
         id="month"
         min="2017-10"
         onChange={this.handleChange}

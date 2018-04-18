@@ -1,6 +1,91 @@
+section {
+  margin-top: 100px;
+  height: 70vh;
+  overflow-y: scroll
+}
+
+h1 {
+  font-size: .8rem;
+  margin: 0px;
+}
+
 .game-box {
-  width: 95%;
-  height: 50px;
-  background-color: #A3A8AE;
-  margin: auto;
+  box-sizing: border-box;
+  text-align: center;
+  color: #A3A8AE;
+  width: 94%;
+  height: 4rem;
+  background-color: rgb(60, 64, 70);
+  padding: 1rem;
+  margin: 0 auto 1rem auto;
+}
+
+@media (min-width: 414px) {
+  section {
+    margin-top: 150px;
+    height: 68vh;
+  }
+
+  h1 {
+    font-size: 1.11rem;
+  }
+
+  .game-box {
+    height: 5rem;
+  }
+}
+
+@media (min-width: 591px) {
+  section {
+    margin-top: 150px;
+    height: 62vh;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .game-box {
+    height: 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-top: 175px;
+    height: 81vh;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-box {
+    height: 6.5rem;
+  }
+}
+
+@media (min-width: 912px) {
+  section {
+    margin-top: 175px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-box {
+    height: 7rem;
+  }
+}
+
+@media (min-width: 1056px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .game-box {
+    height: 7rem;
+    width: 75vw;
+  }
 }

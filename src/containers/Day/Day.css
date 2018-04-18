@@ -1,9 +1,60 @@
 .date,
 .directions {
+  font-size: 1.125rem;
+  margin-top: .25rem;
+  text-align: center;
   color: #677584;
 }
 
 .loading-gif {
   width: 100vw;
   height: 80vh;
+}
+
+@media (min-width: 414px) {
+  .date,
+  .directions {
+    font-size: 1.25rem;
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 591px) {
+  .date,
+  .directions {
+    font-size: 1.5rem;
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .date,
+  .directions {
+    font-size: 2.25rem;
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 912px) {
+  .date,
+  .directions {
+    font-size: 2.5rem;
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 1056px) {
+  .date,
+  .directions {
+    font-size: 2.5rem;
+    margin-top: .25rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .date,
+  .directions {
+    font-size: 2.5rem;
+    margin-top: .25rem;
+  }
 }
