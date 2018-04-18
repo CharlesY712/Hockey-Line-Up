@@ -15,7 +15,7 @@ describe('Week', () => {
     const mockSetDate = jest.fn();
     let wrapper;
 
-    it('should not display schedule on update if there are no games in Week', () => {
+    it('should not display schedule on update if no games in Week', () => {
       wrapper = shallow(<Week
         date={'2018-W24'}
         schedule={schedule.dailygameschedule.gameentry}
@@ -29,7 +29,7 @@ describe('Week', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should not display games on mount if selected date doesnt include W', () => {
+    it('should not display games on mount if date doesnt include W', () => {
       wrapper = shallow(<Week
         date={'2018-04-12'}
         schedule={[schedule]}
@@ -40,7 +40,7 @@ describe('Week', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should not display games on update if selected date doesnt inclued W', () => {
+    it('should not display games on update if date doesnt inclued W', () => {
       wrapper = shallow(<Week
         date={'2018-04-12'}
         schedule={[schedule]}

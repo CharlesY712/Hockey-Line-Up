@@ -20,8 +20,10 @@ export class Day extends Component {
 
   componentDidMount() {
     if (this.props.date.length === 10) {
-      const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
-      const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
+      const selectedDate = 
+      parseInt(this.props.date.split('-').join(''), 10);
+      const todaysDate = 
+      parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
       if (selectedDate >= todaysDate) {
         this.getSchedule();
         this.setState({isLoading: true});
@@ -35,8 +37,10 @@ export class Day extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.date.length === 10) {
       if (prevProps.date !== this.props.date) {
-        const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
-        const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
+        const selectedDate = 
+        parseInt(this.props.date.split('-').join(''), 10);
+        const todaysDate = 
+        parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
         if (selectedDate >= todaysDate) {
           this.setState({isLoading: true});
           this.getSchedule();
@@ -75,8 +79,11 @@ export class Day extends Component {
   }
 
   displayGames() {
-    const selectedDate = parseInt(this.props.date.split('-').join(''), 10);
-    const todaysDate = parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
+    const selectedDate = 
+    parseInt(this.props.date.split('-').join(''), 10);
+
+    const todaysDate = 
+    parseInt(new Date().toJSON().slice(0, 10).split('-').join(''), 10);
     if (selectedDate >= todaysDate) {
       const mappedGames = this.props.schedule.map(schedule => {
         return <Game
@@ -119,7 +126,9 @@ export class Day extends Component {
           {
             !this.state.isLoading &&
           <section>
-            <div className="directions">Please select a day in the box above.</div>
+            <div className="directions">
+              Please select a day in the box above.
+            </div>
             <h2 className="date">{this.props.date}</h2>
             {this.displayGames()}
           </section>
@@ -129,7 +138,9 @@ export class Day extends Component {
     } else {
       return (
         <section>
-          <div className="directions">Please select a day in the box above.</div>
+          <div className="directions">
+            Please select a day in the box above.
+          </div>
         </section>
       );
     }

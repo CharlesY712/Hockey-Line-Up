@@ -79,7 +79,9 @@ export class Month extends Component {
           {
             !this.state.isLoading &&   
           <section>
-            <div className="directions">Please select a Month in the box above.</div>
+            <div className="directions">
+              Please select a Month in the box above.
+            </div>
             <h1 className="date">{this.props.date}</h1>
             {this.state.games}
           </section>
@@ -89,7 +91,9 @@ export class Month extends Component {
     } else {
       return (
         <section>
-          <div className="directions">Please select a Month in the box above.</div>
+          <div className="directions">
+            Please select a Month in the box above.
+          </div>
         </section>
       );
     }

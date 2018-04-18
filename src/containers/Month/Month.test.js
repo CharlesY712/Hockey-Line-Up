@@ -29,7 +29,7 @@ describe('Month', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should not display games on mount if selected date length is not 7', () => {
+    it('should not display games on mount if date length is not 7', () => {
       wrapper = shallow(<Month
         date={'2018-04-12'}
         schedule={[schedule]}
@@ -40,7 +40,7 @@ describe('Month', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should not display games on update if selected date length is not 7', () => {
+    it('should not display games on update if date length is not 7', () => {
       wrapper = shallow(<Month
         date={'2018-04-12'}
         schedule={[schedule]}
