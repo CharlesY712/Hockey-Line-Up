@@ -36,7 +36,7 @@ ShallowWrapper {
           className="select-boxes"
 >
           <input
-                    className="dateSelector"
+                    className="date-selector"
                     id="date"
                     min="2017-10-04"
                     name="day"
@@ -78,7 +78,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <input
-            className="dateSelector"
+            className="date-selector"
             id="date"
             min="2017-10-04"
             name="day"
@@ -93,7 +93,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "dateSelector",
+            "className": "date-selector",
             "id": "date",
             "min": "2017-10-04",
             "name": "day",
@@ -128,7 +128,7 @@ ShallowWrapper {
             className="select-boxes"
 >
             <input
-                        className="dateSelector"
+                        className="date-selector"
                         id="date"
                         min="2017-10-04"
                         name="day"
@@ -170,7 +170,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <input
-              className="dateSelector"
+              className="date-selector"
               id="date"
               min="2017-10-04"
               name="day"
@@ -185,7 +185,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "dateSelector",
+              "className": "date-selector",
               "id": "date",
               "min": "2017-10-04",
               "name": "day",
@@ -398,7 +398,7 @@ ShallowWrapper {
           className="select-boxes"
 >
           <input
-                    className="dateSelector"
+                    className="date-selector"
                     id="month"
                     min="2017-10"
                     name="month"
@@ -440,7 +440,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <input
-            className="dateSelector"
+            className="date-selector"
             id="month"
             min="2017-10"
             name="month"
@@ -455,7 +455,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "dateSelector",
+            "className": "date-selector",
             "id": "month",
             "min": "2017-10",
             "name": "month",
@@ -490,7 +490,7 @@ ShallowWrapper {
             className="select-boxes"
 >
             <input
-                        className="dateSelector"
+                        className="date-selector"
                         id="month"
                         min="2017-10"
                         name="month"
@@ -532,7 +532,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <input
-              className="dateSelector"
+              className="date-selector"
               id="month"
               min="2017-10"
               name="month"
@@ -547,7 +547,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "dateSelector",
+              "className": "date-selector",
               "id": "month",
               "min": "2017-10",
               "name": "month",
@@ -610,7 +610,7 @@ ShallowWrapper {
           className="select-boxes"
 >
           <input
-                    className="dateSelector"
+                    className="date-selector"
                     id="week"
                     min="2017-10-04"
                     name="week"
@@ -652,7 +652,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": <input
-            className="dateSelector"
+            className="date-selector"
             id="week"
             min="2017-10-04"
             name="week"
@@ -667,7 +667,7 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "className": "dateSelector",
+            "className": "date-selector",
             "id": "week",
             "min": "2017-10-04",
             "name": "week",
@@ -702,7 +702,7 @@ ShallowWrapper {
             className="select-boxes"
 >
             <input
-                        className="dateSelector"
+                        className="date-selector"
                         id="week"
                         min="2017-10-04"
                         name="week"
@@ -744,7 +744,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": <input
-              className="dateSelector"
+              className="date-selector"
               id="week"
               min="2017-10-04"
               name="week"
@@ -759,7 +759,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "host",
             "props": Object {
-              "className": "dateSelector",
+              "className": "date-selector",
               "id": "week",
               "min": "2017-10-04",
               "name": "week",

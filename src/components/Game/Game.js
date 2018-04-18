@@ -12,8 +12,8 @@ const Game = ({
 }) => {
   return (
     <article className="game-box">
-      <h1>{awayTeamCity} {awayTeamName} vs
-        {homeTeamCity} {homeTeamName} on {date} @ {time}</h1>
+      <h1>{awayTeamCity} {awayTeamName} -vs- {homeTeamCity} {homeTeamName} <br/>
+        {date} @ {time}</h1>
     </article>
   );
 };

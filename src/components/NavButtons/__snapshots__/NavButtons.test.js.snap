@@ -22,10 +22,12 @@ ShallowWrapper {
           activeClassName="active"
           ariaCurrent="true"
           className="home button"
+          exact={true}
           to="/"
 >
           <img
                     alt="home-icon"
+                    className="icon"
                     src="home.svg"
           />
           Home
@@ -38,6 +40,7 @@ ShallowWrapper {
 >
           <img
                     alt="day-icon"
+                    className="icon"
                     src="day-calendar.svg"
           />
           Day
@@ -50,6 +53,7 @@ ShallowWrapper {
 >
           <img
                     alt="week-icon"
+                    className="icon"
                     src="week-calendar.svg"
           />
           Week
@@ -62,6 +66,7 @@ ShallowWrapper {
 >
           <img
                     alt="month-icon"
+                    className="icon"
                     src="month-calendar.svg"
           />
           Month
@@ -81,11 +86,13 @@ ShallowWrapper {
           "children": Array [
             <img
               alt="home-icon"
+              className="icon"
               src="home.svg"
 />,
             "Home",
           ],
           "className": "home button",
+          "exact": true,
           "to": "/",
         },
         "ref": null,
@@ -96,6 +103,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "home-icon",
+              "className": "icon",
               "src": "home.svg",
             },
             "ref": null,
@@ -116,6 +124,7 @@ ShallowWrapper {
           "children": Array [
             <img
               alt="day-icon"
+              className="icon"
               src="day-calendar.svg"
 />,
             "Day",
@@ -131,6 +140,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "day-icon",
+              "className": "icon",
               "src": "day-calendar.svg",
             },
             "ref": null,
@@ -151,6 +161,7 @@ ShallowWrapper {
           "children": Array [
             <img
               alt="week-icon"
+              className="icon"
               src="week-calendar.svg"
 />,
             "Week",
@@ -166,6 +177,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "week-icon",
+              "className": "icon",
               "src": "week-calendar.svg",
             },
             "ref": null,
@@ -186,6 +198,7 @@ ShallowWrapper {
           "children": Array [
             <img
               alt="month-icon"
+              className="icon"
               src="month-calendar.svg"
 />,
             "Month",
@@ -201,6 +214,7 @@ ShallowWrapper {
             "nodeType": "host",
             "props": Object {
               "alt": "month-icon",
+              "className": "icon",
               "src": "month-calendar.svg",
             },
             "ref": null,
@@ -225,10 +239,12 @@ ShallowWrapper {
             activeClassName="active"
             ariaCurrent="true"
             className="home button"
+            exact={true}
             to="/"
 >
             <img
                         alt="home-icon"
+                        className="icon"
                         src="home.svg"
             />
             Home
@@ -241,6 +257,7 @@ ShallowWrapper {
 >
             <img
                         alt="day-icon"
+                        className="icon"
                         src="day-calendar.svg"
             />
             Day
@@ -253,6 +270,7 @@ ShallowWrapper {
 >
             <img
                         alt="week-icon"
+                        className="icon"
                         src="week-calendar.svg"
             />
             Week
@@ -265,6 +283,7 @@ ShallowWrapper {
 >
             <img
                         alt="month-icon"
+                        className="icon"
                         src="month-calendar.svg"
             />
             Month
@@ -284,11 +303,13 @@ ShallowWrapper {
             "children": Array [
               <img
                 alt="home-icon"
+                className="icon"
                 src="home.svg"
 />,
               "Home",
             ],
             "className": "home button",
+            "exact": true,
             "to": "/",
           },
           "ref": null,
@@ -299,6 +320,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "home-icon",
+                "className": "icon",
                 "src": "home.svg",
               },
               "ref": null,
@@ -319,6 +341,7 @@ ShallowWrapper {
             "children": Array [
               <img
                 alt="day-icon"
+                className="icon"
                 src="day-calendar.svg"
 />,
               "Day",
@@ -334,6 +357,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "day-icon",
+                "className": "icon",
                 "src": "day-calendar.svg",
               },
               "ref": null,
@@ -354,6 +378,7 @@ ShallowWrapper {
             "children": Array [
               <img
                 alt="week-icon"
+                className="icon"
                 src="week-calendar.svg"
 />,
               "Week",
@@ -369,6 +394,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "week-icon",
+                "className": "icon",
                 "src": "week-calendar.svg",
               },
               "ref": null,
@@ -389,6 +415,7 @@ ShallowWrapper {
             "children": Array [
               <img
                 alt="month-icon"
+                className="icon"
                 src="month-calendar.svg"
 />,
               "Month",
@@ -404,6 +431,7 @@ ShallowWrapper {
               "nodeType": "host",
               "props": Object {
                 "alt": "month-icon",
+                "className": "icon",
                 "src": "month-calendar.svg",
               },
               "ref": null,

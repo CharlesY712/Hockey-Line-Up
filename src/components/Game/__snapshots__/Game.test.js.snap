@@ -19,9 +19,10 @@ ShallowWrapper {
     "props": Object {
       "children": <h1>
          
-         vs 
+         -vs- 
          
-         on 
+         
+        <br />
          @ 
 </h1>,
       "className": "game-box",
@@ -36,11 +37,12 @@ ShallowWrapper {
           undefined,
           " ",
           undefined,
-          " vs ",
+          " -vs- ",
           undefined,
           " ",
           undefined,
-          " on ",
+          " ",
+          <br />,
           undefined,
           " @ ",
           undefined,
@@ -51,11 +53,20 @@ ShallowWrapper {
         undefined,
         " ",
         undefined,
-        " vs ",
+        " -vs- ",
         undefined,
         " ",
         undefined,
-        " on ",
+        " ",
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "br",
+        },
         undefined,
         " @ ",
         undefined,
@@ -72,9 +83,10 @@ ShallowWrapper {
       "props": Object {
         "children": <h1>
            
-           vs 
+           -vs- 
            
-           on 
+           
+          <br />
            @ 
 </h1>,
         "className": "game-box",
@@ -89,11 +101,12 @@ ShallowWrapper {
             undefined,
             " ",
             undefined,
-            " vs ",
+            " -vs- ",
             undefined,
             " ",
             undefined,
-            " on ",
+            " ",
+            <br />,
             undefined,
             " @ ",
             undefined,
@@ -104,11 +117,20 @@ ShallowWrapper {
           undefined,
           " ",
           undefined,
-          " vs ",
+          " -vs- ",
           undefined,
           " ",
           undefined,
-          " on ",
+          " ",
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "br",
+          },
           undefined,
           " @ ",
           undefined,

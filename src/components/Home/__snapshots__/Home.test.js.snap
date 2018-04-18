@@ -17,27 +17,10 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <img
-        alt="logo"
-        className="logo"
-        src="nhl-logo.png"
-/>,
       "className": "logo-wrapper",
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "alt": "logo",
-        "className": "logo",
-        "src": "nhl-logo.png",
-      },
-      "ref": null,
-      "rendered": null,
-      "type": "img",
-    },
+    "rendered": null,
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -46,27 +29,10 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <img
-          alt="logo"
-          className="logo"
-          src="nhl-logo.png"
-/>,
         "className": "logo-wrapper",
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "alt": "logo",
-          "className": "logo",
-          "src": "nhl-logo.png",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": "img",
-      },
+      "rendered": null,
       "type": "div",
     },
   ],
