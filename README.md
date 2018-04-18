@@ -30,10 +30,10 @@ This app currently supports only the current NHL season. The api provides inform
 ## Screenshot
 
 ### Mobile Home Page
-![mobile home screenshot](./src/images.mobileScreenshotHome.png)
+![mobile home screenshot](./src/images/mobileScreenshotHome.png)
 
 ### Mobile Day Page
-![mobile day screenshot](./src/images.mobileScreenshotGames.png)
+![mobile day screenshot](./src/images/mobileScreenshotGames.png)
 
 ### Desktop Day Page
-![desktop screenshot](./src/images.desktopScreenshot.png)
+![desktop screenshot](./src/images/desktopScreenshot.png)
