@@ -79,7 +79,7 @@ describe('Day', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
-    it('should display scoreboard if selected date is before todays date', () => {
+    it('should display scoreboard if date is before todays date', () => {
       wrapper = shallow(<Day
         date={'2018-04-12'}
         schedule={[schedule]}
@@ -120,7 +120,7 @@ describe('Day', () => {
         setDate={mockSetDate}
       />);
 
-      const mockPrevProps = {date: '2018-04-12'}
+      const mockPrevProps = {date: '2018-04-12'};
       wrapper.instance().componentDidUpdate(mockPrevProps);
 
       expect(fetchSeason).toHaveBeenCalled();

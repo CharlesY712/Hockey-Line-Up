@@ -35,7 +35,6 @@ export class Week extends Component {
 
   getDateOfISOWeek(year, week) {
     const simple = new Date(year, 0, 1 + (week - 1) * 7);
-    const dow = simple.getDay();
     const ISOweekStart = simple;
     ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
     return ISOweekStart.toISOString().slice(0, 10);
@@ -89,7 +88,9 @@ export class Week extends Component {
           {
             !this.state.isLoading &&
           <section>
-            <div className="directions">Please select a week in the box above.</div>
+            <div className="directions">
+              Please select a week in the box above.
+            </div>
             <h1 className="date">{this.props.date}</h1>
             {this.state.games}
           </section>
@@ -99,7 +100,9 @@ export class Week extends Component {
     } else {
       return (
         <section>
-          <div className="directions">Please select a week in the box above.</div>
+          <div className="directions">
+            Please select a week in the box above.
+          </div>
         </section>
       );
     }
