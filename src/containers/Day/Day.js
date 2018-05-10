@@ -13,7 +13,6 @@ export class Day extends Component {
   constructor() {
     super();
     this.state = {
-      games: [],
       isLoading: false
     };
   }

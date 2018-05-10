@@ -23,4 +23,4 @@ const NavButtons = () => {
   );
 };
 
-export default (NavButtons);
+export default NavButtons;

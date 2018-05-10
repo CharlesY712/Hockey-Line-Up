@@ -5,3 +5,5 @@ describe('actions', () => {
     expect(actions).toMatchSnapshot();
   });
 });
+
+// each action needs to ahve test for correct type and correct payload
